@@ -5,7 +5,6 @@ import Home from './Home'
 export default class Routes extends React.Component {
 
     render() {
-        console.log('Routes', this.props)
         return (
             <React.Fragment>
                 <Switch>

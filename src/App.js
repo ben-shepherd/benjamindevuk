@@ -6,6 +6,8 @@ import './App.css';
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './store'
+
+// Routes
 import Routes from './routes'
 
 // Sections
@@ -24,9 +26,6 @@ class App extends Component {
               </div>
               <div className="app-content d-flex">
                 <Routes />
-                {/* <Welcome />
-                <About />
-                <section className="AboutDivider"></section> */}
               </div>
             </div>
           </div>

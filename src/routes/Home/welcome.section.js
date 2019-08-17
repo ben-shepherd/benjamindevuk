@@ -1,7 +1,7 @@
 import React from 'react'
 import Particles from 'react-particles-js'
 import config from '../../config';
-import AutoType from '../AutoType'
+import AutoType from '../../components/AutoType'
 import { Link } from 'react-router-dom'
 
 const introTexts = [

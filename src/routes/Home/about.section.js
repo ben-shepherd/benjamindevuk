@@ -43,7 +43,7 @@ const About = () => {
                         onto backend and learning PHP, the <a href={LARAVEL_URL} target="_blank" rel="noopener noreferrer">Laravel framework</a> and creating some truly awesome websites.</p> */}
                     </div>
                     <div className="Interests">
-                        <h6 className="text-center mt-5 mb-3">SKILL SET</h6>
+                        <h6 className="text-center mt-5 mb-5">SKILL SET</h6>
                         <div class="interest-parent frontend">
                             <div className="title">Frontend</div>
                             <p class="interest-item">UI/UX</p>
@@ -84,7 +84,10 @@ const About = () => {
                             <p className="interest-item">Ubuntu 16.04 (Apache, Nginx, MySQL, NoSQL)</p>
                             <p className="interest-item">Heroku</p>
                         </div>
-
+                        <div className="interest-parent version-control">
+                            <div className="title">Version Control</div>
+                            <p className="interest-item">Git / Github / BitBucket</p>
+                        </div>
                     </div>
                 </div>
 
