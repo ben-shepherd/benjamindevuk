@@ -82,14 +82,16 @@ nav.sidebar-nav li:first-child {
 nav.sidebar-nav li:last-child {
     
 }
-nav.sidebar-nav li {
+nav.sidebar-nav li a {
+    display:block;
     height:75px;
     line-height:75px;
     background-color:#0a2123;
     padding-left:30px;
 }
-nav.sidebar-nav li:hover {
-    background-color:#15494c;
+nav.sidebar-nav a:hover {
+    background-color:#0b292b;
+    text-decoration:none;
 }
 nav.sidebar-nav a {
     color:#fff;
@@ -125,6 +127,7 @@ section.Welcome {
     padding-top:150px;
     height:100vh;
     width:100%;
+    position:relative;
 }
 section.Welcome .catchy {
     text-align:center;
