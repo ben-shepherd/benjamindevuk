@@ -1,65 +1,34 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const PortfolioTitle = () => {
-    return (
-        <div className="PortfolioTitle section-padding-3 text-center">
-            <h1>Past Projects</h1>
-            <h3>Checkout some of my previous work</h3>
-        </div>
-    )
-}
+// portfolio items
+import Puretree from './portfolio/puretree'
+import Hindhead from './portfolio/hindhead'
+import Gtblitz from './portfolio/gtblitz'
+import Hbc from './portfolio/hbc'
+import Kaitenbun from './portfolio/kaitenbun'
+
 const Portfolio = () => {
     return (
         <section className="Portfolio">
-
-            {PortfolioTitle()}
-
-            <div className="row-fluid">
-                <div className="col-12 col-md-8 Item tipsntoes">
-                    <p className="title">Tips 'n' Toes</p>
-                    <div className="unfocused"></div>
-                    <div className="focused"></div>
-                </div>
-                <div className="col-12 col-md-4 Item kaitenbun">
-                    <p className="title">Kaitenbun</p>
-                    <p className="sub-title">回転聞</p>
-                </div>
-                <div className="col-12 col-md-4 Item habbocreate">
-                    <div className="unfocused">
-                        <p className="title">HabboCreate</p>
-                    </div>
-                    <div className="focused">
-                        <div className="spinner"></div>
-                        <div className="hbc-logo"></div>
-                        <div className="buildings"></div>
-                    </div>
-                </div>
+            <div className="section-title">
+                <h1>Recent Work</h1>
             </div>
-            {/* <div className="row-fluid">
-                <div className="col-12 col-md-4 Item puretrees">
-                    <div className="unfocused">
-                        <p className="title">Pure Tree</p>
-                        <p className="sub-title">Naturally made to measure</p>
-                    </div>
-                    <div className="focused">
-                        <div className="logo"></div>
-                    </div>
-                </div>
-                <div className="col-12 col-md-4 Item hindhead">
-                <div className="unfocused">
-                        <p className="title">Hindhead property</p>
-                        <p className="sub-title">Sales &amp; Lettings</p>
-                    </div>
-                    <div className="focused">
-                        <div className="logo"></div>
-                    </div>
-                </div>
-                <div className="col-12 col-md-4 Item snr">
-
-                </div>
-            </div> */}
+            <div className="portfolio-items d-flex">
+                <Puretree />
+                <Hindhead />
+                <Gtblitz />
+                <Hbc />
+                <Kaitenbun />
+            </div>
         </section>
     )
 }
+
+const PortfolioItem = (props) => (
+    <div className="PortfolioItem">
+
+    </div>
+)
 
 export default Portfolio

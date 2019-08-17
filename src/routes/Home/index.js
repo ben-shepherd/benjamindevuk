@@ -11,6 +11,7 @@ export default class Home extends React.Component {
                 <Welcome />
                 <About />
                 <section className="AboutDivider"></section>
+                <Portfolio />
             </div>
         )
     }

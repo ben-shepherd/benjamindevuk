@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Sidebar extends React.Component {
 
@@ -12,17 +13,20 @@ export default class Sidebar extends React.Component {
                         </div>
                         <div className="author">
                             <h1>Benjamin</h1>
+                            <h2>Website Developer</h2>
                         </div>
                     </div>
-                    <div className="text">
+                    {/* <div className="text">
                         <h2>Freelance Web Developer</h2>
-                    </div>
+                    </div> */}
                 </div>
                 <nav className="sidebar-nav">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><Link href="/">Home</Link></li>
+                        <li><Link href="/">About</Link></li>
+                        <li><Link href="/">Work</Link></li>
+                        <li><Link href="/">Contact</Link></li>
+                        <li><Link href="/">Free Quote</Link></li>
                     </ul>
                 </nav>
             </div>
