@@ -1,6 +1,12 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
+
 import Home from './Home'
+import Puretrees from './Portfolio/puretrees'
+import Hindhead from './Portfolio/hindhead'
+import Gametimeblitz from './Portfolio/gametimeblitz'
+import Habbocreate from './Portfolio/habbocreate'
+import Kaitenbun from './Portfolio/kaitenbun'
 
 export default class Routes extends React.Component {
 
@@ -9,6 +15,13 @@ export default class Routes extends React.Component {
             <React.Fragment>
                 <Switch>
                     <Route exact path="/" component={Home} />
+
+                    {/* Portfolio */}
+                    <Route path="/portfolio/puretrees" component={Puretrees} />
+                    <Route path="/portfolio/hindheadproperty" component={Hindhead} />
+                    <Route path="/portfolio/gametimeblitz" component={Gametimeblitz} />
+                    <Route path="/portfolio/habbocreate" component={Habbocreate} />
+                    <Route path="/portfolio/kaitenbun" component={Kaitenbun} />
                 </Switch>
             </React.Fragment>
         )

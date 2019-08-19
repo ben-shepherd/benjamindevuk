@@ -1,32 +1,24 @@
 import React from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { animateScroll as scroll } from 'react-scroll'
+import urlService from '../../_services/url.service'
 
+const ROUTES = urlService.routes
 
 export default withRouter(class Sidebar extends React.Component {
 
-    componentDidMount() {
-        console.log('Sidebar mounted', {props: this.props})
-    }
-
-    onClick = (e, target) => {
-        e.preventDefault()
-        console.log('onClick', {e, target}, e.target)
-
+    onClick = (target) => {
         if(target === 'home') {
             scroll.scrollToTop()
             this.props.history.push('/')
-            return
         }
-
-        var el = document.querySelector(`a[name=${target}]`);
-
-        if(el) {
-            scroll.scrollTo(el.offsetTop)
-            this.props.history.push({pathname: `/#${target}`})
+        else {
+            var el = document.querySelector(`a[name=${target}]`);
+            if(el) {
+                scroll.scrollTo(el.offsetTop)
+                this.props.history.push({pathname: `/#${target}`})
+            }
         }
-
-        return false
     } 
 
     render() {
@@ -45,11 +37,11 @@ export default withRouter(class Sidebar extends React.Component {
                 </div>
                 <nav className="sidebar-nav">
                     <ul>
-                        <li><Link href="/" onClick={(e) => this.onClick(e, 'home')}>Home</Link></li>
-                        <li><Link href="/#about" onClick={(e) => this.onClick(e, 'about')}>About</Link></li>
-                        <li><Link href="/#portfolio" onClick={(e) => this.onClick(e, 'portfolio')}>Work</Link></li>
-                        <li><Link href="/#contact" onClick={(e) => this.onClick(e, 'contact')}>Contact</Link></li>
-                        <li><Link href="/#contact" onClick={(e) => this.onClick(e, 'contact')}>Free Quote</Link></li>
+                        <li><a href={ROUTES.home()} onClick={() => this.onClick('home')}>Home</a></li>
+                        <li><a href={ROUTES.about()} onClick={() => this.onClick('about')}>About</a></li>
+                        <li><a href={ROUTES.work()} onClick={() => this.onClick('portfolio')}>Work</a></li>
+                        <li><a href={ROUTES.quote()} onClick={() => this.onClick('contact')}>Quote</a></li>
+                        <li><a href={ROUTES.contact()} onClick={() => this.onClick('contact')}>Contact</a></li>
                     </ul>
                 </nav>
             </div>

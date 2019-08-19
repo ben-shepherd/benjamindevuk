@@ -2,6 +2,7 @@ import React from 'react'
 import Welcome from './welcome.section'
 import About from './about.section'
 import Portfolio from './portfolio.section'
+import Contact from './contact.section'
 
 export default class Home extends React.Component {
 
@@ -17,6 +18,9 @@ export default class Home extends React.Component {
 
                 <a name="portfolio"></a>
                 <Portfolio />
+
+                <a name="contact"></a>
+                <Contact />
             </div>
         )
     }
