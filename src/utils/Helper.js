@@ -2,7 +2,6 @@ const ranInt = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
 
-
 const shuffleArray = (array) => {
     var i = array.length, j, temp;
     if ( i == 0 ) return array;

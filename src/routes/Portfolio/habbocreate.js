@@ -11,7 +11,7 @@ const gtblitz = () => (
             </div>
 
             <h4>Project description</h4>
-            <p>Habbocreate is a built for purpose creative platform for Habbo Hotel, allowing users to upload, share and interact with the game in a variety of new ways. The site features some of the most advanced, unique features ever to be seen on a Habbo fansite which lead the site to become the largest, most active and engaging website for Habbo within the first year of opening.</p>
+            <p>Habbocreate is a built for purpose creative platform for <a href="https://www.habbo.com/" target="_blank" rel="noopener noreferrer">Habbo Hotel</a>, allowing users to upload, share and interact with the game in a variety of new ways. The site features some of the most advanced, unique features ever to be seen on a Habbo fansite which lead the site to become the largest, most active and engaging website for Habbo within the first year of opening.</p>
             <p>The website is now officially recognised by Habbo hotel as a fansite.</p>
 
             <h4>Built with</h4>
@@ -59,7 +59,7 @@ const gtblitz = () => (
                 <div className="screenshot" style={{ backgroundImage: 'url(/img/portfolio/screenshots/habbocreate2.jpg)' }}></div>
                 <div className="screenshot" style={{ backgroundImage: 'url(/img/portfolio/screenshots/habbocreate3.jpg)' }}></div>
                 <div className="screenshot" style={{ backgroundImage: 'url(/img/portfolio/screenshots/habbocreate4.jpg)' }}></div>
-                <div className="screenshot" style={{ backgroundImage: 'url(/img/portfolio/screenshots/habbocreate5.jpg)' }}></div>
+                <div className="screenshot bg-left" style={{ backgroundImage: 'url(/img/portfolio/screenshots/habbocreate5.jpg)' }}></div>
                 <div className="screenshot" style={{ backgroundImage: 'url(/img/portfolio/screenshots/habbocreate6.jpg)' }}></div>
             </div>
         </div>

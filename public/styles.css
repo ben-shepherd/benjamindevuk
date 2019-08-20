@@ -67,7 +67,35 @@ html, body, .App {
 .sidebar .top .text h2 {
     font-size:20px;
     color:#fff;
-
+}
+.sidebar .social {
+    color:#fff;
+    margin-top:5px;
+    margin-left:25px;
+    margin-bottom:15px;
+    display:flex;
+}
+.sidebar .social .phone {
+    order:3;
+    margin-top:2px;
+}
+.sidebar .social .phone svg {
+    margin-right:5px;
+}
+.sidebar .social-icon {
+    height:30px;
+    width:30px;
+    background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.social-icon.facebook {
+    height:20px;
+    margin-top:5px;
+    background-image: url(../img/logos/facebook.png);
+}
+.social-icon.twitter {  
+    background-image: url(../img/logos/twitter.png);
 }
 nav.sidebar-nav {
 
@@ -100,7 +128,18 @@ nav.sidebar-nav a {
     font-weight:300;
     font-size:1.2em;
 }
-
+.secondary-nav {
+    margin-top:15px;
+    padding-left:3  0px;
+}
+.secondary-nav a {
+    display:block;
+    text-align:left;
+    color:#c7c7c7;
+    font-weight:300;
+    font-size:12px;
+    padding:5px 0;
+}
 .ParticlejsContainer {
     position: absolute;
     top:0;
@@ -237,6 +276,10 @@ section.Portfolio .portfolio-item {
     overflow:hidden;
     position:relative;
     transition:all 0.2s ease-in;
+}
+section.Portfolio .portfolio-item.workinprogress {
+    height:375px;
+    flex:0 0 35%;
 }
 section.Portfolio .portfolio-item:hover {
     transform:scale(1.2);
@@ -421,6 +464,6 @@ section.portfolio-page .screenshots-container .screenshot:hover {
     transition:all 0.2s ease-in;
 }
 
-section.portfolio-page.habbocreate .screenshot:nth-child(5) {
+section.portfolio-page .screenshot.bg-left {
     background-position:left;
 }

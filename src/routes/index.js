@@ -7,6 +7,8 @@ import Hindhead from './Portfolio/hindhead'
 import Gametimeblitz from './Portfolio/gametimeblitz'
 import Habbocreate from './Portfolio/habbocreate'
 import Kaitenbun from './Portfolio/kaitenbun'
+import ThePensionAdmin from './Portfolio/thepensionadmin'
+import Tipsntoes from './Portfolio/tipsntoes'
 
 export default class Routes extends React.Component {
 
@@ -22,6 +24,8 @@ export default class Routes extends React.Component {
                     <Route path="/portfolio/gametimeblitz" component={Gametimeblitz} />
                     <Route path="/portfolio/habbocreate" component={Habbocreate} />
                     <Route path="/portfolio/kaitenbun" component={Kaitenbun} />
+                    <Route path="/portfolio/thepensionadministrator" component={ThePensionAdmin} />
+                    <Route path="/portfolio/tipsntoes" component={Tipsntoes} />
                 </Switch>
             </React.Fragment>
         )
