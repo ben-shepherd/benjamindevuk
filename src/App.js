@@ -20,7 +20,7 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
-            <div className="site-wrapper d-flex">
+            <div className="site-wrapper">
               <div className="app-sidebar">
                 <Sidebar />
               </div>

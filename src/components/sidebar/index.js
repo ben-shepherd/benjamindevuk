@@ -3,64 +3,97 @@ import { withRouter } from 'react-router-dom'
 import { animateScroll as scroll } from 'react-scroll'
 import urlService from '../../_services/url.service'
 import PhoneLinkRing from '@material-ui/icons/PhonelinkRing'
+import MenuIcon from '@material-ui/icons/Menu';
 const ROUTES = urlService.routes
 
 export default withRouter(class Sidebar extends React.Component {
+    state = {
+        mobileMenuOpen: false,
+    }
+
+    handleMobileMenu = () => this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen })
 
     onClick = (target, e) => {
-        if(typeof e !== 'undefined') {
+        if (e) {
             e.preventDefault()
         }
 
-        if(target === 'home') {
+        if (target === 'home') {
             scroll.scrollToTop()
             this.props.history.push('/')
+            this.setState({ mobileMenuOpen: false })
         }
         else {
             var el = document.querySelector(`a[name=${target}]`);
-            if(el) {
+            if (el) {
                 scroll.scrollTo(el.offsetTop)
-                this.props.history.push({pathname: `/#${target}`})
+                this.props.history.push({ pathname: `/#${target}` })
+                this.setState({ mobileMenuOpen: false })
             }
         }
-    } 
+    }
 
     render() {
+        const { mobileMenuOpen } = this.state
+
         return (
-            <div className="sidebar">
-                <div className="top">
-                    <div className="basic d-flex">
-                        <div className="picture-container">
-                            <div className="picture"></div>
+            <React.Fragment>
+                <div className="sidebar">
+                    <div className="top">
+                        <div className="basic d-flex">
+                            <div className="picture-container">
+                                <div className="picture"></div>
+                            </div>
+                            <div className="author">
+                                <h1>Benjamin</h1>
+                                <h2>Website Developer</h2>
+                            </div>
                         </div>
-                        <div className="author">
-                            <h1>Benjamin</h1>
-                            <h2>Website Developer</h2>
+                        <div className="social">
+                            <div className="phone">
+                                <PhoneLinkRing /> 01234567890
+                        </div>
+                            <div className="social-icon facebook"></div>
+                            <div className="social-icon twitter"></div>
                         </div>
                     </div>
-                    <div className="social">
-                        <div className="phone">
-                            <PhoneLinkRing /> 01234567890
-                        </div>
-                        <div className="social-icon facebook"></div>
-                        <div className="social-icon twitter"></div>
-                    </div> 
+                    <nav className="sidebar-nav">
+                        {this.renderMenu()}
+                    </nav>
+                    {this.renderSecondaryMenu()}
                 </div>
-                <nav className="sidebar-nav">
-                    <ul>
-                        <li><a href={ROUTES.home()} onClick={(e) => this.onClick('home', e)}>Home</a></li>
-                        <li><a href={ROUTES.about()} onClick={() => this.onClick('about')}>About</a></li>
-                        <li><a href={ROUTES.work()} onClick={() => this.onClick('portfolio')}>Work</a></li>
-                        <li><a href={ROUTES.quote()} onClick={() => this.onClick('contact')}>Quote</a></li>
-                        <li><a href={ROUTES.contact()} onClick={() => this.onClick('contact')}>Contact</a></li>
-                    </ul>
-                </nav>
-                <ul className="secondary-nav">
-                    <a href={ROUTES.privacy()} target="_blank" rel="noopener noreferrer">Privacy</a>
-                    <a href={ROUTES.terms()} target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
-                    <a href="https://github.com/ben-shepherd" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </ul>
-            </div>
+                <div className="sidebar-mobile">
+                    <div className="toggle-menu" onClick={this.handleMobileMenu}>
+                        <MenuIcon fontSize="large" />
+                    </div>
+                    <div className={`sidebar-dropdown ${mobileMenuOpen ? 'active' : ''}`}>
+                        {this.renderMenu()}
+                        {this.renderSecondaryMenu()}
+                    </div>
+                </div>
+            </React.Fragment>
+        )
+    }
+
+    renderMenu() {
+        return (
+            <ul>
+                <li><a href={ROUTES.home()} onClick={(e) => this.onClick('home', e)}>Home</a></li>
+                <li><a href={ROUTES.about()} onClick={() => this.onClick('about')}>About</a></li>
+                <li><a href={ROUTES.work()} onClick={() => this.onClick('portfolio')}>Work</a></li>
+                <li><a href={ROUTES.quote()} onClick={() => this.onClick('contact')}>Quote</a></li>
+                <li><a href={ROUTES.contact()} onClick={() => this.onClick('contact')}>Contact</a></li>
+            </ul>
+        )
+    }
+
+    renderSecondaryMenu() {
+        return (
+            <ul className="secondary-nav">
+                <a href={ROUTES.privacy()} target="_blank" rel="noopener noreferrer">Privacy</a>
+                <a href={ROUTES.terms()} target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+                <a href="https://github.com/ben-shepherd" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </ul>
         )
     }
 })

@@ -1,14 +1,17 @@
 import React from 'react'
 
-const LARAVEL_URL = 'https://laravel.com/'
-const NWKC_URL = 'https://www.northkent.ac.uk/'
-
 const About = () => {
     return (
         <section className="About bg-dark section-padding-3 text-white">
             <div className="row">
-                <div className="col-12 col-md-6 text-left">
-                    <h3>— I'm Benjamin. A freelance web developer based in the UK, working with local international businesses.</h3>
+                <div className="col-12 col-sm-12 col-md-12 col-lg-6">
+                    <div className="developer-text">
+                        <h3>— I'm Benjamin. A freelance web developer based in the UK, working with local international businesses.</h3>
+                    </div>
+                </div>
+            </div>
+            <div className="About-flex d-flex">
+                <div className="developer-summary">
                     <h2 className="mt-5">What I do</h2>
 
                     <div className="Services ml-3">
@@ -29,19 +32,7 @@ const About = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-12 col-md-6 AboutMe">
-                    <div className="AboutMe">
-                        {/* <h6 className="text-center">A little about me</h6> */}
-
-                        {/* <p>I have been exposed to technology my whole life, tinkering with computers from young age.
-                        In 2011 I studied Hadware, Networking and software at <a href={NWKC_URL} target="_blank" rel="noopener noreferrer">North West Kent College in Gravesend</a>.
-                            During that time I had taken a massive interest into Visaul Basic, and C# programming languages and began creating
-                            apps. At the height of my short C# writing career I had developed a perosonal
-                        app that allowed me to track my course work and see how well I was doing overall.</p>
-
-                        <p>It wasn't till the 2nd year that I had begun learning the core basics of web development (HTML, CSS, JavaScript). Eventually moving
-                        onto backend and learning PHP, the <a href={LARAVEL_URL} target="_blank" rel="noopener noreferrer">Laravel framework</a> and creating some truly awesome websites.</p> */}
-                    </div>
+                <div className="developer-skills">
                     <div className="Interests">
                         <h6 className="text-center mt-5 mb-5">SKILL SET</h6>
                         <div class="interest-parent frontend">

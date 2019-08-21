@@ -1,0 +1,91 @@
+@media(max-width:1700px) {
+    section.About-flex {
+        flex-wrap:wrap;
+        flex-direction:row;
+    }
+    section.About .developer-summary  {
+        flex:0 0 100%;
+    }   
+    section.About .developer-skills {
+        flex:0 0 100%;
+    }
+}
+@media(max-width:1200px) {
+    .site-wrapper {
+        display:block;
+    }
+    .app-content {
+        
+    }
+    .app-sidebar {
+        position:fixed;
+        top:0;
+        width:100%;
+        z-index:1000;    
+    }
+    .sidebar {
+        display:none;
+    }
+    .sidebar-mobile {
+        display:block;
+        z-index:1000;
+    }
+    .sidebar-dropdown:not(.active) ul {
+        display:none;
+    }
+    .sidebar-mobile .toggle-menu {
+        color:#fff;
+        text-align:center;
+        padding:10px 0;
+    }
+    .sidebar-mobile .toggle-menu:hover {
+        cursor:pointer;
+    }
+
+    .sidebar-dropdown ul {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+    }
+    .sidebar-dropdown li {
+        margin:0;
+        padding:0;
+    }
+    .sidebar-dropdown a {
+        display:block;
+        text-align:center;
+        color:#fff;
+        padding:10px 0;
+        text-transform:uppercase;
+        font-size:20px;
+        font-weight:normal;
+    }
+    .sidebar-dropdown a:first-child {
+      ()  border-top:1px solid #1b4042;
+    }
+    .sidebar-dropdown a:not(last-child) {
+        border-bottom:1px solid #1b4042;
+    }
+    .sidebar-dropdown a:hover {
+        cursor:pointer;
+        text-decoration:none;
+        background:#2a4a4c;
+    }
+    .ParticlejsContainer {
+        display:none;
+    }
+}
+@media(max-width:768px) {
+    section.About .developer-text * {
+        line-height:55px;
+    }
+    section.Portfolio .portfolio-item {
+        flex:1 0 40%;
+    }
+    section.Portfolio .portfolio-item.workinprogress {
+        flex-basis:80%;
+    }
+    section.Portfolio .portfolio-item .background {
+        filter:none;
+    }
+}
