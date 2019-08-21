@@ -7,7 +7,7 @@ const About = () => {
     return (
         <section className="About bg-dark section-padding-3 text-white">
             <div className="row">
-                <div className="col-12 col-sm-6 text-left">
+                <div className="col-12 col-md-6 text-left">
                     <h3>— I'm Benjamin. A freelance web developer based in the UK, working with local international businesses.</h3>
                     <h2 className="mt-5">What I do</h2>
 
@@ -29,7 +29,7 @@ const About = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-12 col-sm-6 AboutMe">
+                <div className="col-12 col-md-6 AboutMe">
                     <div className="AboutMe">
                         {/* <h6 className="text-center">A little about me</h6> */}
 

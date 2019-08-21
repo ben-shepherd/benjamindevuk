@@ -192,7 +192,8 @@ section.Welcome .logos {
     display:flex;
     align-items:center;
     justify-content:center;
-    margin-top:150px;
+    
+    margin-top:5%;
 }
 section.Welcome .logos .logo {
     width:100px;
@@ -241,6 +242,7 @@ section.About .Interests .interest-parent {
     margin-bottom:10px;
     border-radius:3px;
     display:flex;
+    flex-wrap:wrap;
 }
 section.About .Interests .interest-parent .title {
     padding:5px;
@@ -285,6 +287,8 @@ section.Portfolio .portfolio-item:hover {
     transform:scale(1.2);
     transition:all 0.2s ease-in;
     z-index:1000;
+}
+section.Portfolio .portfolio-item:not(.workinprogress):hover {
     cursor:pointer;
 }
 section.Portfolio .portfolio-item .background {
@@ -322,7 +326,17 @@ section.Portfolio .portfolio-item.kaitenbun .background {
     background-size:contain;
     background-position:center;
 }
-
+section.Portfolio .github-repo {
+    text-align:center;
+    line-height:0;
+}
+section.Portfolio .github-repo p {
+    position:relative;
+    top:-10px;
+}
+section.Portfolio .github-repo img {
+    height:100px;
+}
 /* Keyframes */
 @keyframes rotate {
     from {

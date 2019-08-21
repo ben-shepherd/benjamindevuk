@@ -56,8 +56,8 @@ export default withRouter(class Sidebar extends React.Component {
                     </ul>
                 </nav>
                 <ul className="secondary-nav">
-                    <a href={ROUTES.privacy()} >Privacy</a>
-                    <a href={ROUTES.terms()}>Terms &amp; Conditions</a>
+                    <a href={ROUTES.privacy()} target="_blank" rel="noopener noreferrer">Privacy</a>
+                    <a href={ROUTES.terms()} target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
                     <a href="https://github.com/ben-shepherd" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </ul>
             </div>

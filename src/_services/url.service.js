@@ -4,8 +4,8 @@ const routes = {
     work: () => '/#portfolio',
     quote: () => '/#contact',
     contact: () => '/#contact',
-    privacy: () => '/privacy',
-    terms: () => '/terms',
+    privacy: () => '/privacy.pdf',
+    terms: () => '/terms.pdf',
     portfolio: {
         puretrees: () => '/portfolio/puretrees',
         hindhead: () => '/portfolio/hindheadproperty',

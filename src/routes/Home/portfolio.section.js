@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import { animateScroll as scroll } from 'react-scroll'
 
 // portfolio items
 //import Puretree from './portfolioItems/puretree'
@@ -13,6 +14,7 @@ import Workinprogress from './portfolioItems/workinprogress'
 
 const Portfolio = (props) => {
     const onClick = (url) => {
+        scroll.scrollToTop()
         props.history.push(url)
     }
 
@@ -35,6 +37,15 @@ const Portfolio = (props) => {
             </div>
             <div className="portfolio-items d-flex">
                 <Workinprogress />
+            </div>
+            <div className="section-title">
+                <h1>How was this website built?</h1>
+            </div>
+            <div className="github-repo">
+                <p>Check out the websites source code on GitHub</p>
+                <a href="https://github.com/ben-shepherd/benshepherd-react" target="_blank" rel="noopener noreferrer">
+                    <img src="/img/logos/github.png" alt="GitHub Repositry" title="GitHub - benshepherd-react" />
+                </a>
             </div>
         </section>
     )
