@@ -15,7 +15,7 @@
         display:block;
     }
     .app-content {
-        
+        padding-top:50px;
     }
     .app-sidebar {
         position:fixed;
@@ -61,7 +61,7 @@
         font-weight:normal;
     }
     .sidebar-dropdown a:first-child {
-      ()  border-top:1px solid #1b4042;
+        border-top:1px solid #1b4042;
     }
     .sidebar-dropdown a:not(last-child) {
         border-bottom:1px solid #1b4042;
@@ -73,6 +73,10 @@
     }
     .ParticlejsContainer {
         display:none;
+    }
+    section.portfolio-page .screenshots-container .screenshot {
+        flex-basis:100%;
+        height:500px;
     }
 }
 @media(max-width:768px) {
