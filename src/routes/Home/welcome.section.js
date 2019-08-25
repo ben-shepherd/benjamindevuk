@@ -49,8 +49,8 @@ export default withRouter(class Welcome extends React.Component {
 
                 <div className="intro container">
                     <div className="row">
-                        <div className="col-12 col-md-6 offset-md-3">
-                            <h3>I'm looking for...</h3>
+                        <div className="col-12 col-md-6 offset-md-3 auto-type-container">
+                            <h3 class="auto-type-title">I'm looking for...</h3>
                             <AutoType textList={introTexts} />
                         </div>
                     </div>
