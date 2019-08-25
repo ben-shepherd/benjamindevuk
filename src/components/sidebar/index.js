@@ -51,10 +51,10 @@ export default withRouter(class Sidebar extends React.Component {
                         </div>
                         <div className="social">
                             <div className="phone">
-                                <PhoneLinkRing /> 01234567890
-                        </div>
-                            <div className="social-icon facebook"></div>
-                            <div className="social-icon twitter"></div>
+                                <PhoneLinkRing /> (+44) 07775437508
+                            </div>
+                            {/* <div className="social-icon facebook"></div>
+                            <div className="social-icon twitter"></div> */}
                         </div>
                     </div>
                     <nav className="sidebar-nav">
