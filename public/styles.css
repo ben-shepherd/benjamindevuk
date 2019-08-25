@@ -197,6 +197,7 @@ section.Welcome .logos {
     justify-content:center;
     
     margin-top:10%;
+    margin-bottom:50px;
 }
 section.Welcome .logos .logo {
     width:100px;

@@ -101,10 +101,20 @@
     .section-title * {
         font-size:1.4em;
     }
+    section.portfolio-page {
+        padding:15px;
+    }
+    section.portfolio-page .screenshots-container .screenshot {
+        margin:0;
+        margin-bottom:15px;
+    }
 }
 @media(max-width:500px) {
     section.Welcome  {
         padding-top:50px;
+    }
+    .full-height {
+        height:auto;
     }
     section.Welcome .intro {
         margin-top:40px;
