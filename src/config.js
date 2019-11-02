@@ -1,5 +1,7 @@
 const config = {
 
+    API_URL: 'http://benjamindev-api.local/',
+
     particlejs: {
         "particles": {
           "number": {

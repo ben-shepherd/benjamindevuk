@@ -9,12 +9,15 @@ import Habbocreate from './Portfolio/habbocreate'
 import Kaitenbun from './Portfolio/kaitenbun'
 import ThePensionAdmin from './Portfolio/thepensionadmin'
 import Tipsntoes from './Portfolio/tipsntoes'
+import ModalDialog from '../components/Modal'
 
 export default class Routes extends React.Component {
 
     render() {
         return (
             <React.Fragment>
+                <ModalDialog />
+
                 <Switch>
                     <Route exact path="/" component={Home} />
 

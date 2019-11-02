@@ -1,6 +1,8 @@
+import { hot } from 'react-hot-loader/root';
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
 
 // Redux
 import { BrowserRouter } from 'react-router-dom'
@@ -35,4 +37,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default hot(App);

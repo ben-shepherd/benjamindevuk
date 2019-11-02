@@ -1,3 +1,6 @@
+import store from '../store'
+import { DefaultButton } from '../components/Modal'
+
 const ENV_DEVELOPMENT = 'ENV_DEVELOPMENT'
 const ENV_PRODUCTION = 'ENV_PRODUCTION'
 
@@ -40,6 +43,18 @@ const alertClear = () => {
     return {type: ALERT_CLEAR}
 }
 
+const CREATE_MODAL = 'CREATE_MODAL'
+const createModal = (body, buttons = [DefaultButton()] ) => {
+    store.dispatch({type: CREATE_MODAL, payload: { body, buttons} })
+}
+const createModalTitle = (title, body, buttons = [DefaultButton()] ) => {
+    store.dispatch({type: CREATE_MODAL, payload: { title, body, buttons} })
+}
+const HIDE_MODAL = 'HIDE_MODAL'
+const hideModal = () => {
+    store.dispatch({type: HIDE_MODAL})
+}
+
 export default {
     ENV_DEVELOPMENT,
     ENV_PRODUCTION,
@@ -64,4 +79,11 @@ export default {
 
     ALERT_CLEAR,
     alertClear,
+
+    CREATE_MODAL,
+    createModal,
+    createModalTitle,
+
+    HIDE_MODAL,
+    hideModal,
 }

@@ -3,6 +3,7 @@ import appServices from '../_services/app.service'
 import config from "../config";
 import appAction from '../_actions/app.action';
 import helperService from '../_services/helper.service'
+import { DefaultButton } from '../components/Modal'
 
 const initialState = {
     dev: appServices.envDevelopment(),
@@ -16,6 +17,11 @@ const initialState = {
         text: null,
         alert_type: null,
     },
+    modal: {
+        title: null,
+        body: null,
+        buttons: [DefaultButton()],
+    }
 }
 
 const app = (state = initialState, action) => {
@@ -61,6 +67,22 @@ const app = (state = initialState, action) => {
                 ...state,
                 defaultProfilePicture: action.payload,
 
+            }
+        case appAction.CREATE_MODAL:
+            return {
+                ...state,
+                modal: {
+                    title: action.payload.title || null,
+                    body: action.payload.body,
+                    buttons: action.payload.buttons,
+                }
+            }
+        case appAction.HIDE_MODAL:
+            return {
+                ...state,
+                modal: {
+                    ...initialState.modal,
+                }
             }
         default:
             return state

@@ -1,7 +1,11 @@
+.bg-dark {
+    background-color:black;
+}
+
 .font-lato,
 h1,h2,h3,h4,h5,h6,
 p,strong,span,small {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
 }
 html, body, .App {
     height:100%;
@@ -9,6 +13,9 @@ html, body, .App {
 }
 .full-height {
     height:100vh;
+}
+.section-dark {
+    background-color:#1778ba;
 }
 .site-wrapper {
     display:flex;
@@ -18,7 +25,7 @@ html, body, .App {
     flex:0 0 350px;
     position:sticky;
     top:0;
-    background-color: #3a3e3f;
+    background-color: #101010;
     flex-grow:1;
 }
 .app-content  {
@@ -39,13 +46,15 @@ html, body, .App {
     padding:10px;
 }
 .sidebar .basic .picture {
-    background-image: url(/img/profile_picture.jpg);
+    background-image: url('/img/profile_picture.jpg');
     width:100px;
     height:100px;
     border-radius:50px;
     background-position:center;
     background-size:cover;
-    box-shadow:1px 1px 5px rgb(0, 0, 0, 0.8);
+
+    // box-shadow:1px 1px rgb(0, 0, 0, 0.8);
+
 }
 .sidebar .basic .author {
     position:relative;
@@ -77,6 +86,8 @@ html, body, .App {
     margin-left:25px;
     margin-bottom:15px;
     display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
 }
 .sidebar .social .phone {
     order:3;
@@ -95,10 +106,10 @@ html, body, .App {
 .social-icon.facebook {
     height:20px;
     margin-top:5px;
-    background-image: url(../img/logos/facebook.png);
+    background-image: url('/img/logos/facebook.png');
 }
 .social-icon.twitter {  
-    background-image: url(../img/logos/twitter.png);
+    background-image: url('/img/logos/twitter.png');
 }
 nav.sidebar-nav {
 
@@ -118,11 +129,13 @@ nav.sidebar-nav li a {
     display:block;
     height:75px;
     line-height:75px;
-    background-color:#0a2123;
+    background-color:#161616;
     padding-left:30px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:300;
 }
 nav.sidebar-nav a:hover {
-    background-color:#0b292b;
+    background-color:#2b2b2b;
     text-decoration:none;
 }
 nav.sidebar-nav a {
@@ -185,6 +198,16 @@ section.Welcome .welcome-contact .btn {
     padding:10px;
     font-weight:300;
     transition:transform 0.2s ease-in;
+    background-color:#1778ba;
+    border:1px solid #42a5e8;
+}
+.MuiButton-containedPrimary {
+    background-color:#1778ba !important;
+}
+section.Welcome .welcome-contact .btn:focus,
+section.Welcome .welcome-contact .btn:active {
+    background-color:#3a576b;
+    border:1px solid #283c49;
 }
 section.Welcome .welcome-contact .btn:hover {
     transform:scale(1.1);
@@ -212,19 +235,19 @@ section.Welcome .logos .logo:hover {
     transform:scale(1.2);
 }
 section.Welcome .logos .logo.laravel {
-    background-image: url(../img/logos/laravel.png);
+    background-image: url('/img/logos/laravel.png');
 }
 section.Welcome .logos .logo.nodejs {
-    background-image: url(../img/logos/nodejs.png);
+    background-image: url('/img/logos/nodejs.png');
     width:170px;
 }
 section.Welcome .logos .logo.reactjs {
-    background-image: url(../img/logos/reactjs.png);
+    background-image: url('/img/logos/reactjs.png');
 }
 
 /* About section */
 section.About {
-    border:4px solid #2c2d2d;
+    border:4px solid #2e73a1;
     border-left:0;
     border-right:0;
     box-shadow:10px -30px  55px rgba(52, 58, 64, 0.3);
@@ -241,9 +264,10 @@ section.About .Interests .interest-parent.frontend {
     margin-bottom:5px;
 }
 section.About .Interests .interest-parent {
-    background-color:#2a3035;
+    background-color:#134a70;
     margin-bottom:10px;
     border-radius:3px;
+    padding:0 15px;
     display:flex;
     flex-wrap:wrap;
 }
@@ -402,9 +426,18 @@ section.Contact {
     padding-bottom:50px;
 }
 section.Contact .pre-contact {
-    background-color:#343a40;
     padding:30px 0;
     color:#fff;
+    a {
+        color:#e0e0e0;
+        font-weight:bold;
+        letter-spacing:1px;
+    }
+    p {
+        color:#e0e0e0;
+        margin-top:5px;
+        font-size:14px;
+    }
 }
 section.Contact .form-selection-container {
     align-items:center;
@@ -434,6 +467,57 @@ section.Contact .seperator {
     height:1px;
     background-color:#c7c7c7;
 }
+section.Contact textarea {
+    min-height:150px;
+}
+section.Contact .body-count {
+    text-align:right;
+    margin-top:5px;
+    font-size:12px;
+    background-color:#e6e6e6;
+    display:inline-block;
+    padding:0px 10px;
+    border-radius:3px;
+    &.too-short {
+        background-color:#ffa9a9;
+    }
+    &.good {
+        background-color:#53c65c;
+        color:#fff;
+    }
+}
+section.Contact .submitting {
+    display:flex;
+    justify-content:center;
+    transition:all 0.2s ease-in;
+    opacity:0;
+    height:0;
+
+    &.active {
+        opacity:1;
+        height:auto;
+    }
+    svg {
+        margin-right:10px;
+        font-size:36px;
+        position:relative;
+        top:2px;
+        color:#37bbff;
+        animation:LoadingSpinner 1s infinite ease-in-out;
+    }
+    p {
+        font-size:22px;
+    }
+}
+
+@keyframes LoadingSpinner {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
 
 /** Portfolio page */
 section.portfolio-page {
@@ -457,19 +541,19 @@ section.portfolio-page .built-with:not(:first-child) {
     margin-left:15px;
 }
 section.portfolio-page .built-with.php {
-    background-image:url(../img/logos/php.png);
+    background-image:url('/img/logos/php.png');
 }
 section.portfolio-page .built-with.js {
-    background-image:url(../img/logos/js.png);
+    background-image:url('/img/logos/js.png');
 }
 section.portfolio-page .built-with.react {
-    background-image:url(../img/logos/reactjs.png);
+    background-image:url('/img/logos/reactjs.png');
 }
 section.portfolio-page .built-with.laravel {
-    background-image:url(../img/logos/laravel.png);
+    background-image:url('/img/logos/laravel.png');
 }
 section.portfolio-page .built-with.nodejs {
-    background-image:url(../img/logos/nodejs.png);
+    background-image:url('/img/logos/nodejs.png');
 }
 section.portfolio-page .screenshots-container {
     display:flex;

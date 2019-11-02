@@ -2,11 +2,11 @@ import React from 'react'
 
 const About = () => {
     return (
-        <section className="About bg-dark section-padding-3 text-white">
+        <section className="About section-dark section-padding-3 text-white">
             <div className="row">
                 <div className="col-12 col-sm-12 col-md-12 col-lg-6">
                     <div className="developer-text">
-                        <h3>— I'm Benjamin. A freelance web developer based in the UK, working with local international businesses.</h3>
+                        <h3>— I'm Benjamin. A freelance web developer based in the UK, working with local &amp; international businesses.</h3>
                     </div>
                 </div>
             </div>
@@ -74,6 +74,7 @@ const About = () => {
                             <p className="interest-item">Windows Server (Apache)</p>
                             <p className="interest-item">Ubuntu 16.04 (Apache, Nginx, MySQL, NoSQL)</p>
                             <p className="interest-item">Heroku</p>
+                            <p className="interest-item">Plesk</p>
                         </div>
                         <div className="interest-parent version-control">
                             <div className="title">Version Control</div>

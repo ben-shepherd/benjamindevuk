@@ -106,7 +106,7 @@ class Form extends React.Component {
             <div className={`form-step two ${this.getStepClassName(2)}`}>
                 <div className="text-center">
                     <h4>Describe your project</h4>
-                    <p>In as much detail as you can, tell me about your project.</p>
+                    <p>In as much detail as you can provide, describe your project and provide all necessary information for the most accurate quote.</p>
                 </div>
                 <div className="form-group mb-3">
                     <textarea name="project_description" style={{height:'200px'}} className="form-control" placeholder="Describe your project..."
@@ -114,7 +114,7 @@ class Form extends React.Component {
                 </div>
 
                 <Button variant="contained" color="primary" className="pull-left" onClick={this.handlePrevStep}>Edit contact details</Button>
-                <Button variant="contained" color="primary" className="pull-right">Next Step</Button>
+                <Button variant="contained" color="primary" className="pull-right">Send for Quote review</Button>
             </div>
         )
     }

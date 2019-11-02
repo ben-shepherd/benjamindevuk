@@ -53,6 +53,9 @@ export default withRouter(class Sidebar extends React.Component {
                             <div className="phone">
                                 <PhoneLinkRing /> (+44) 07775437508
                             </div>
+                            <div className="email">
+                                <p>hi@benjamindev.uk</p>
+                            </div>
                             {/* <div className="social-icon facebook"></div>
                             <div className="social-icon twitter"></div> */}
                         </div>

@@ -3,6 +3,8 @@ import Welcome from './welcome.section'
 import About from './about.section'
 import Portfolio from './portfolio.section'
 import Contact from './contact.section'
+import '../../_scss/homepage.scss'
+import '../../_scss/devices.scss'
 
 export default class Home extends React.Component {
 
