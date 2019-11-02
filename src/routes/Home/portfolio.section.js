@@ -43,7 +43,7 @@ const Portfolio = (props) => {
             </div>
             <div className="github-repo">
                 <p>Check out the websites source code on GitHub</p>
-                <a href="https://github.com/ben-shepherd/benshepherd-react" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/ben-shepherd/benjamindevuk" target="_blank" rel="noopener noreferrer">
                     <img src="/img/logos/github.png" alt="GitHub Repositry" title="GitHub - benshepherd-react" />
                 </a>
             </div>
