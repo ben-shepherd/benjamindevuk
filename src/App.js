@@ -22,14 +22,7 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
-            <div className="site-wrapper">
-              <div className="app-sidebar">
-                <Sidebar />
-              </div>
-              <div className="app-content d-flex">
-                <Routes />
-              </div>
-            </div>
+            <Routes />
           </div>
         </BrowserRouter>
       </Provider>
