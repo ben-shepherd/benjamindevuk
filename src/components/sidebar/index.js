@@ -17,16 +17,19 @@ export default withRouter(class Sidebar extends React.Component {
         if (e) {
             e.preventDefault()
         }
+        const scrollOptions = {
+            delay: 0,
+        }
 
         if (target === 'home') {
-            scroll.scrollToTop()
+            scroll.scrollToTop(scrollOptions)
             this.props.history.push('/')
             this.setState({ mobileMenuOpen: false })
         }
         else {
             var el = document.querySelector(`a[name=${target}]`);
             if (el) {
-                scroll.scrollTo(el.offsetTop)
+                scroll.scrollTo(el.offsetTop, scrollOptions)
                 this.props.history.push({ pathname: `/#${target}` })
                 this.setState({ mobileMenuOpen: false })
             }

@@ -10,6 +10,7 @@ import Kaitenbun from './Portfolio/kaitenbun'
 import ThePensionAdmin from './Portfolio/thepensionadmin'
 import Tipsntoes from './Portfolio/tipsntoes'
 import ModalDialog from '../components/Modal'
+import ArticleOne from './Articles/One'
 
 export default class Routes extends React.Component {
 
@@ -29,6 +30,9 @@ export default class Routes extends React.Component {
                     <Route path="/portfolio/kaitenbun" component={Kaitenbun} />
                     <Route path="/portfolio/thepensionadministrator" component={ThePensionAdmin} />
                     <Route path="/portfolio/tipsntoes" component={Tipsntoes} />
+
+                    {/* Articles  */}
+                    <Route exact path="/fresh" component={ArticleOne} />
                 </Switch>
             </React.Fragment>
         )

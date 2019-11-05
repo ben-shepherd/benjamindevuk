@@ -13,10 +13,12 @@
     "react-dom": "^16.8.3",
     "react-hot-loader": "^4.12.15",
     "react-particles-js": "^2.5.1",
+    "react-player": "^1.13.0",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.1",
     "react-scripts": "2.1.5",
     "react-scroll": "^1.7.13",
+    "react-youtube-background": "^0.2.1",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0"
