@@ -24,18 +24,20 @@ const Article = () => {
         host: 'https://www.youtube.com'
     };
 
+    // return (
+    //     <YoutubeBackground
+    //         videoId="wnhvanMdx4s">
+    //     </YoutubeBackground>
+    // )
     return (
-        <YoutubeBackground
-            videoId="wnhvanMdx4s">
-        </YoutubeBackground>
-    )
-    return (
-        <div className="YouTube">
-            <YouTube
-                videoId="wnhvanMdx4s"
-                opts={videoOptions}>
+        <div className="ArticleOne">
+            <div className="YouTube">
+                <YouTube
+                    videoId="wnhvanMdx4s"
+                    opts={videoOptions}>
 
-            </YouTube>
+                </YouTube>
+            </div>
         </div>
     )
 }

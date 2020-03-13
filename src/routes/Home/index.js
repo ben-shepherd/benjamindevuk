@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux';
+import appActions from '../../_actions/app.action'
+import { singletons, collections } from '../../apis/cockpit';
 import Welcome from './welcome.section'
 import About from './about.section'
 import Portfolio from './portfolio.section'
@@ -6,27 +9,82 @@ import Contact from './contact.section'
 import '../../_scss/homepage.scss'
 import '../../_scss/devices.scss'
 import SiteWrapper from '../../components/SiteWrapper';
+import Loading from '../../components/Loading';
 
-export default class Home extends React.Component {
+const Home = (props) => {
+    
+    useEffect(() => {
+        const fetchData = async () => {
+            const cockpitData = {
+                welcome: await singletons.get('welcome'),
+                portfolio: await collections.posts('portfolio'),
+            }
+            
+            props.setCockpit(cockpitData);
+        }
 
-    render() {
+        fetchData();
+    }, [])
+
+    if(props.cockpit === null) {
         return (
-            <SiteWrapper content={(
-                <React.Fragment>
-                    <a name="home" />
-                    <Welcome />
-
-                    <a name="about"></a>
-                    <About />
-                    <section className="AboutDivider"></section>
-
-                    <a name="portfolio"></a>
-                    <Portfolio />
-
-                    <a name="contact"></a>
-                    <Contact />
-                </React.Fragment>
-            )} />
+            <Loading />
         )
     }
+
+    const { welcome } = props.cockpit
+    
+    return (
+        <SiteWrapper content={(
+            <React.Fragment>
+
+                <a name="home" />
+                <Welcome singleton={welcome} />
+
+                <a name="about"></a>
+                <About />
+                <section className="AboutDivider"></section>
+
+                <a name="portfolio"></a>
+                <Portfolio />
+
+                <a name="contact"></a>
+                <Contact />
+
+            </React.Fragment>
+        )} />
+    )
 }
+
+const mapState = (state) => ({
+    cockpit: state.app.cockpit,
+})
+const mapDispatch = (dispatch) => ({
+    setCockpit: (payload) => dispatch(appActions.cockpit(payload)),
+})
+const connected = connect(mapState, mapDispatch)(Home);
+
+export default connected
+// export default class Home extends React.Component {
+
+//     render() {
+//         return (
+//             <SiteWrapper content={(
+//                 <React.Fragment>
+//                     <a name="home" />
+//                     <Welcome />
+
+//                     <a name="about"></a>
+//                     <About />
+//                     <section className="AboutDivider"></section>
+
+//                     <a name="portfolio"></a>
+//                     <Portfolio />
+
+//                     <a name="contact"></a>
+//                     <Contact />
+//                 </React.Fragment>
+//             )} />
+//         )
+//     }
+// }

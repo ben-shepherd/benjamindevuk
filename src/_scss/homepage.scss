@@ -15,7 +15,7 @@ html, body, .App {
     height:100vh;
 }
 .section-dark {
-    background-color:#1778ba;
+    background-color:#0e0e0e;
 }
 .site-wrapper {
     display:flex;
@@ -30,7 +30,7 @@ html, body, .App {
 }
 .app-content  {
     flex-direction:column;
-    flex:0 0 80%;
+    flex:0 0 100%;
 }
 .sidebar {
     flex:auto auto 350px;
@@ -183,6 +183,8 @@ section.Welcome {
     padding-top:150px;
     width:100%;
     position:relative;
+    background-color: #1669e6;
+    color:#fff;
 }
 section.Welcome .catchy {
     text-align:center;
@@ -213,6 +215,46 @@ section.Welcome .welcome-contact .btn:hover {
     transform:scale(1.1);
     transition:transform 0.2s ease-in;
 }
+
+/* Welcome explorer */
+section.Welcome .welcome-explorer {
+    text-align:center;
+    margin-top:60px;
+
+    ul {
+        list-style-type:none;
+        display:inline-block;
+        margin:0 auto;
+        padding:0;
+    }
+    li {
+        background:#000000a8;
+        display:inline-block;
+        height:55px; 
+        line-height:55px;
+        text-align:center;
+        border:1px solid rgba(0,0,0,0.1);
+        border-top:0;
+        border-bottom:0;
+
+        &:first-child {
+            border-top-left-radius:28px;
+            border-bottom-left-radius:28px;
+            padding-left:35px;
+        }
+        &:last-child {
+            border-top-right-radius:28px;
+            border-bottom-right-radius:28px;
+            padding-right:35px;
+        }
+    }
+    a {
+        padding:0 25px;
+        color:#fff;
+        font-family: 'Nunito', sans-serif;
+    }
+}
+
 section.Welcome .logos {
     display:flex;
     align-items:center;
@@ -221,33 +263,15 @@ section.Welcome .logos {
     margin-top:10%;
     margin-bottom:50px;
 }
-section.Welcome .logos .logo {
-    width:100px;
-    height:120px;
-    background-position:center;
-    background-size:contain;
-    background-repeat:no-repeat;
-    margin:0 35px;
-    transition:transform 0.2s ease-in;
+section.Welcome .logo-img {
+    max-height:100px;
+    margin:0 15px;
 }
-section.Welcome .logos .logo:hover {
-    transition:transform 0.2s ease-in;
-    transform:scale(1.2);
-}
-section.Welcome .logos .logo.laravel {
-    background-image: url('/img/logos/laravel.png');
-}
-section.Welcome .logos .logo.nodejs {
-    background-image: url('/img/logos/nodejs.png');
-    width:170px;
-}
-section.Welcome .logos .logo.reactjs {
-    background-image: url('/img/logos/reactjs.png');
-}
+
 
 /* About section */
 section.About {
-    border:4px solid #2e73a1;
+    border:4px solid #282829;
     border-left:0;
     border-right:0;
     box-shadow:10px -30px  55px rgba(52, 58, 64, 0.3);
@@ -264,7 +288,7 @@ section.About .Interests .interest-parent.frontend {
     margin-bottom:5px;
 }
 section.About .Interests .interest-parent {
-    background-color:#134a70;
+    background-color:#2b343a;
     margin-bottom:10px;
     border-radius:3px;
     padding:0 15px;

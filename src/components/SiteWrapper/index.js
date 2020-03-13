@@ -5,9 +5,9 @@ const SiteWrapper = (props) => {
     return (
         <div>
             <div className="site-wrapper">
-                <div className="app-sidebar">
+                {/* <div className="app-sidebar">
                     <Sidebar />
-                </div>
+                </div> */}
 
                 <div className="app-content">
                     {props.content}

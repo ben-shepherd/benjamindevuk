@@ -12,7 +12,7 @@ const config = {
             }
           },
           "color": {
-            "value": "#595959"
+            "value": "#e6e6e6"
           },
           "shape": {
             "type": "circle",

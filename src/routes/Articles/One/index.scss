@@ -1,13 +1,19 @@
-.YouTube {
+.ArticleOne {
+    overflow:hidden;
+    min-height:100vh;
+    background:#000;
+
+    .YouTube {
     pointer-events:none;
     position:absolute;
     overflow:hidden;
     width:100%;
-    height:100vh;
+    height:600px;
+    overflow:hidden;
 
-    iframe,
-    > div {
+    iframe {
         width:100%;
-        height:100%;
+        height:600px;
     }
+  }
 }
