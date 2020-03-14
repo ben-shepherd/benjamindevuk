@@ -1,0 +1,105 @@
+$closedWidth: 30px;
+$openedWidth: 200px;
+
+.sidebarClickableBar {
+    position:fixed;
+    top:0;
+    left:$closedWidth;
+    height:100vh;
+    width:2px;
+    background:#41b0ff;
+    transition:all 0.5s ease;
+    opacity:1;
+}
+
+.site-wrapper.with-sidebar {
+    display:flex;
+    flex-direction:row;
+
+    .app-sidebar {
+        width:$closedWidth;
+        height:100vh;
+        background-color: #101010;
+        transition:all 0.4s ease;
+
+        ul {
+            list-style-type:none;
+            padding:0;
+        }
+        li {
+            height:20px;
+            text-align:center;
+        }
+
+        .fas,svg {
+            color:#fff;
+            font-size:14px;
+            position: relative;;
+            top:5px;
+        }
+        span {
+            display:none;
+        }
+
+
+        &:hover {
+            cursor:pointer;
+
+            .sidebarClickableBar {
+                transition:all 0.5s ease;
+                width:5px;
+                background-color: #ababab;
+            }
+        }
+    }
+    .app-content  {
+        flex-direction:column;
+        flex:0 0 calc(100% - $closedWidth);
+    }
+
+
+    &.full-sidebar {
+        .app-sidebar {
+            transition:all 0.4s ease;
+            width:$openedWidth;
+        }
+        .app-content  {
+            flex-direction:column;
+            flex:0 0 calc(100% - $openedWidth);
+        }   
+        span {
+            font-family: 'Nunito', sans-serif;
+            font-size:16px;
+            text-transform: uppercase;
+            display:block;
+            color:#fff;
+            padding-left:10px;
+            position: relative;;
+            top:7px;
+        }
+        li {
+            display:flex;
+            height:40px;
+            font-size:12px;
+
+            &:hover {
+                background:#1b1b1b;
+
+                .fas,svg {
+                    color:#5fbdea;
+                }
+            }
+        }
+
+        .fas,svg {
+            color:#fff;
+            font-size:24px;
+            position: relative;;
+            top:5px;
+        }
+
+        .sidebarClickableBar {
+            opacity:0;
+        }
+    }
+}

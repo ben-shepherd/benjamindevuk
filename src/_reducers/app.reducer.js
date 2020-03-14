@@ -22,7 +22,7 @@ const initialState = {
         body: null,
         buttons: [DefaultButton()],
     },
-    cockpit: null,
+    sidebarFull: false,
 }
 
 const app = (state = initialState, action) => {
@@ -85,10 +85,10 @@ const app = (state = initialState, action) => {
                     ...initialState.modal,
                 }
             }
-        case appAction.COCKPIT:
+        case appAction.SIDEBAR_FULL:
             return {
                 ...state,
-                cockpit: action.payload
+                sidebarFull: action.payload
             }
         default:
             return state

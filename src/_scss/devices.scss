@@ -14,63 +14,10 @@
     .site-wrapper {
         display:block;
     }
-    .app-content {
-        padding-top:50px;
-    }
-    .app-sidebar {
-        position:fixed;
-        top:0;
-        width:100%;
-        z-index:1000;    
-    }
-    .sidebar {
-        display:none;
-    }
-    .sidebar-mobile {
-        display:block;
-        z-index:1000;
-    }
-    .sidebar-dropdown:not(.active) ul {
-        display:none;
-    }
-    .sidebar-mobile .toggle-menu {
-        color:#fff;
-        text-align:center;
-        padding:10px 0;
-    }
-    .sidebar-mobile .toggle-menu:hover {
-        cursor:pointer;
-    }
+    // .app-content {
+    //     padding-top:50px;
+    // }
 
-    .sidebar-dropdown ul {
-        list-style-type:none;
-        padding:0;
-        margin:0;
-    }
-    .sidebar-dropdown li {
-        margin:0;
-        padding:0;
-    }
-    .sidebar-dropdown a {
-        display:block;
-        text-align:center;
-        color:#fff;
-        padding:10px 0;
-        text-transform:uppercase;
-        font-size:20px;
-        font-weight:normal;
-    }
-    .sidebar-dropdown a:first-child {
-        border-top:1px solid #1b4042;
-    }
-    .sidebar-dropdown a:not(last-child) {
-        border-bottom:1px solid #1b4042;
-    }
-    .sidebar-dropdown a:hover {
-        cursor:pointer;
-        text-decoration:none;
-        background:#2a4a4c;
-    }
     .ParticlejsContainer {
         display:none;
     }
@@ -78,9 +25,9 @@
         flex-basis:100%;
         height:500px;
     }
-    section.Welcome  {
-        padding-top:50px;
-    }
+    // section.Welcome  {
+    //     padding-top:50px;
+    // }
 }
 @media(max-width:768px) {
     section.About .developer-text * {
@@ -110,9 +57,9 @@
     }
 }
 @media(max-width:500px) {
-    section.Welcome  {
-        padding-top:50px;
-    }
+    // section.Welcome  {
+    //     padding-top:50px;
+    // }
     .full-height {
         height:auto;
     }

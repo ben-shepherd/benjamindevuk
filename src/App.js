@@ -12,10 +12,6 @@ import store from './store'
 // Routes
 import Routes from './routes'
 
-// Sections
-import Sidebar from './components/sidebar'
-
-
 class App extends Component {
   render() {
     return (

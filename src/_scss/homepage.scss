@@ -20,89 +20,12 @@ html, body, .App {
 .site-wrapper {
     display:flex;
     flex-direction:row;
-}
-.app-sidebar {
-    flex:0 0 350px;
-    position:sticky;
-    top:0;
-    background-color: #101010;
-    flex-grow:1;
-}
-.app-content  {
-    flex-direction:column;
-    flex:0 0 100%;
-}
-.sidebar {
-    flex:auto auto 350px;
-    position:sticky;
-    top:0;
-}
-.sidebar-mobile {
-    display:none;
-}
-.sidebar .basic {
-    flex-wrap:wrap;
-    color:#fff;
-    padding:10px;
-}
-.sidebar .basic .picture {
-    background-image: url('/img/profile_picture.jpg');
-    width:100px;
-    height:100px;
-    border-radius:50px;
-    background-position:center;
-    background-size:cover;
 
-    // box-shadow:1px 1px rgb(0, 0, 0, 0.8);
+    .app-content {
+        width:100%;
+    }
+}
 
-}
-.sidebar .basic .author {
-    position:relative;
-    top:12px;
-    left:25px;
-    display:block;
-}
-.sidebar .basic .author h1 {
-    margin:0;
-}
-.sidebar .basic .author h2 {
-    font-size:20px;
-    margin:0;
-}
-.sidebar .top .text {
-    margin-top:15px;
-    margin-left:15px;
-    text-align:center;
-    margin-bottom:10px;
-
-}
-.sidebar .top .text h2 {
-    font-size:20px;
-    color:#fff;
-}
-.sidebar .social {
-    color:#fff;
-    margin-top:5px;
-    margin-left:25px;
-    margin-bottom:15px;
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:column;
-}
-.sidebar .social .phone {
-    order:3;
-    margin-top:2px;
-}
-.sidebar .social .phone svg {
-    margin-right:5px;
-}
-.sidebar .social-icon {
-    height:30px;
-    width:30px;
-    background-size:contain;
-    background-position:center;
-    background-repeat:no-repeat;
-}
 .social-icon.facebook {
     height:20px;
     margin-top:5px;
@@ -111,39 +34,7 @@ html, body, .App {
 .social-icon.twitter {  
     background-image: url('/img/logos/twitter.png');
 }
-nav.sidebar-nav {
 
-}
-nav.sidebar-nav ul {
-    list-style-type:none;
-    margin:0;
-    padding:0;
-}
-nav.sidebar-nav li:first-child {
-    
-}
-nav.sidebar-nav li:last-child {
-    
-}
-nav.sidebar-nav li a {
-    display:block;
-    height:75px;
-    line-height:75px;
-    background-color:#161616;
-    padding-left:30px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight:300;
-}
-nav.sidebar-nav a:hover {
-    background-color:#2b2b2b;
-    text-decoration:none;
-}
-nav.sidebar-nav a {
-    color:#fff;
-    text-transform:uppercase;
-    font-weight:300;
-    font-size:1.2em;
-}
 .secondary-nav {
     margin-top:15px;
     padding-left:3  0px;
