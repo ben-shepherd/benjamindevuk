@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import SiteWrapperSidebar from '../../components/SiteWrapperSidebar'
 import { getStorageUrl } from '../../apis/cockpit'
+import { Tooltip, IconButton } from '@material-ui/core'
+import VisitIcon from '@material-ui/icons/CallMissedOutgoing';
 import '../../_scss/work.scss';
 
 const WorkContainer = (props) => {
@@ -61,7 +63,11 @@ const Work = (props) => {
             <div className="workContent">
                 <div className="container">
                     <div className="text-center pb-4">
-                        <a  href={project.url} target="_blank" rel="noopener noreferrer">{project.url}</a>
+                        <Tooltip title={`Visit ${project.projectName}`} aria-label="visit">
+                            <IconButton onClick={() => window.open(project.url, '_blank')} aria-label={`Visit ${project.projectName}`}>
+                                <VisitIcon />
+                            </IconButton>
+                        </Tooltip>
                     </div>
                     <div className="projectDescription" dangerouslySetInnerHTML={{__html: project.projectDescription}}></div>
                     

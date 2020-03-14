@@ -11,7 +11,7 @@ import SiteWrapper from '../../components/SiteWrapper';
 const Home = (props) => {
 
     const { cockpit } = props
-    const { loaded, welcome, portfolio } = cockpit
+    const { loaded, welcome, about, portfolio } = cockpit
 
     React.useEffect(() => {
         console.log('Home change', {cockpit})
@@ -29,7 +29,7 @@ const Home = (props) => {
                 <Welcome singleton={welcome} />
 
                 <a name="about"></a>
-                <About />
+                <About singleton={about} />
                 <section className="AboutDivider"></section>
 
                 <a name="portfolio"></a>

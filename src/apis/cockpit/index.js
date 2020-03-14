@@ -1,3 +1,5 @@
+import React from 'react'
+
 export { default as singletons } from './singletons'
 export { default as collections } from './collections'
 
@@ -11,4 +13,16 @@ export const getUrl = (path, filters = []) => {
 
 export const getStorageUrl = (path) => {
     return `${API_BASE}${path}`;
+}
+
+export const getHtml = (htmlStr) => {
+    return (
+        <div dangerouslySetInnerHTML={{__html: htmlStr}}></div>
+    )
+}
+
+export default {
+    getUrl,
+    getStorageUrl,
+    getHtml
 }

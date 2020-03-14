@@ -25,6 +25,7 @@ const Routes = (props) => {
                     ...props.cockpit,
                     routes: await collections.posts('routes'),
                     welcome: await singletons.get('welcome'),
+                    about: await singletons.get('about'),
                     portfolio: await collections.posts('portfolio')
                 }
 

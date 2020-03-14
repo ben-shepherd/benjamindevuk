@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import Sidebar from '../sidebar'
+import Sidebar from '../sidebar/index'
 import appActions from '../../_actions/app.action'
 import MenuIcon from '@material-ui/icons/Menu';
 
