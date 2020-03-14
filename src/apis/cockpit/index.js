@@ -15,6 +15,13 @@ export const getStorageUrl = (path) => {
     return `${API_BASE}${path}`;
 }
 
+export const hasValue = (value) => {
+    
+    return(typeof value !== 'undefined'
+        && value !== null
+    )
+}
+
 export const getHtml = (htmlStr) => {
     return (
         <div dangerouslySetInnerHTML={{__html: htmlStr}}></div>

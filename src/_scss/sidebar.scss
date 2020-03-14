@@ -54,7 +54,7 @@ $openedWidth: 200px;
     }
     .app-content  {
         flex-direction:column;
-        flex:0 0 calc(100% - $closedWidth);
+        flex:0 0 calc(100% - #{$closedWidth});
     }
 
 
@@ -65,7 +65,7 @@ $openedWidth: 200px;
         }
         .app-content  {
             flex-direction:column;
-            flex:0 0 calc(100% - $openedWidth);
+            flex:0 0 calc(100% - #{$openedWidth});
         }   
         span {
             font-family: 'Nunito', sans-serif;

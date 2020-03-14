@@ -2,7 +2,7 @@ const config = {
 
     API_URL: 'http://benjamindev-api.local/',
 
-    particlejs: {
+    fallbackParticlejs: {
         "particles": {
           "number": {
             "value": 40,

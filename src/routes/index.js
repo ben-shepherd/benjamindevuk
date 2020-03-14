@@ -23,10 +23,11 @@ const Routes = (props) => {
             try {
                 const cockpitPayload = {
                     ...props.cockpit,
-                    routes: await collections.posts('routes'),
-                    welcome: await singletons.get('welcome'),
-                    about: await singletons.get('about'),
-                    portfolio: await collections.posts('portfolio')
+                    routes:         await collections.posts('routes'),
+                    welcome:        await singletons.get('welcome'),
+                    welcomeButtons: await collections.posts('welcomeButtons'),
+                    about:          await singletons.get('about'),
+                    portfolio:      await collections.posts('portfolio')
                 }
 
                 props.setCockpit(cockpitPayload)

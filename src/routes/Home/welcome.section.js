@@ -26,54 +26,79 @@ const introTexts = [
     "Third Party e.g. Facebook, Instagram"
 ];
 
+const fallbackButtons = () => (
+    <ul class="fallback-buttons">
+        <li><Link to="/#about">About</Link></li>
+        <li><Link to="/#work">Work</Link></li>
+        <li><Link to="/#posts">Posts</Link></li>
+        <li><Link to="/#contact">Message Me</Link></li>
+    </ul>
+);
+
 const Welcome = (props) => {
 
+    const { welcomeButtons } = props
+
     const { singleton } = props
+    const { title, subTitle, introTexts, logos } = singleton    
+
+    React.useEffect(() => {
+        console.log('Welcome buttons changed', {welcomeButtons})
+    }, [welcomeButtons])
+
+    React.useEffect(() => {
+        console.log('Welcome singleton changed', {singleton})
+    }, [welcomeButtons])
+
+    React.useEffect(() => {
+        console.log('Welcome logos', {logos})
+    }, [logos])
+
+    console.log('Welcome logos', {logos})
 
     return (
         <section className="Welcome full-height d-relative">
             <div className="catchy">
-                <h1>{singleton.title}</h1>
-                <h2>{singleton.subTitle}</h2>
+                <h1>{title}</h1>
+                <h2>{subTitle}</h2>
             </div>
 
             <div className="intro container">
                 <div className="row">
-                    <div className="col-12 col-md-6 offset-md-3 auto-type-container">
+                    <div className="col-12 col-md-8 offset-md-2 auto-type-container">
                         <h3 class="auto-type-title">Recently, I've worked on...</h3>
-                        <AutoType textList={singleton.introTexts.items} />
+                        <AutoType textList={introTexts.items} />
                     </div>
                 </div>
             </div>
 
             <div className="welcome-explorer">
-                <ul>
-                    <li><Link to="">About</Link></li>
-                    <li><Link to="">Work</Link></li>
-                    <li><Link to="">Posts</Link></li>
-                    <li><Link to="">Message Me</Link></li>
-                </ul>
-            </div>
-
-            {/* <div className="welcome-contact">
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-12 col-sm-10 offset-sm-1 col-md-4 offset-md-4">
-                            <Link className="btn btn-primary" to={urlService.routes.contact()} onClick={this.onFreeQuoteClick}>Get a free quote</Link>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
-            <div className="logos">
-                {singleton.logos.map((logo,k) => 
-                    <img key={k} className="logo-img" src={getStorageUrl(logo.path)} />
+                {typeof welcomeButtons === 'undefined' ? (
+                    fallbackButtons()
+                ) : (
+                    <ul>
+                        {welcomeButtons.entries.map((btn,i) => 
+                            <li>
+                                <a href={btn.customRoute} target="_blank" rel="noopener noreferrer">{btn.text}</a>
+                                {/* {(typeof btn.route !== 'object' && btn.route) && btn.customRoute.length ? (
+                                    <a href={btn.customRoute} target="_blank" rel="noopener noreferrer">{btn.text}</a>
+                                ) : (
+                                    <a href={btn.route.path} target="_blank" rel="noopener noreferrer">{btn.text}</a>
+                                )} */}
+                            </li>
+                        )}
+                    </ul>
                 )}
             </div>
-            {/* <div className="logo" style={{backgroundImage: `url(${getStorageUrl(logo.path)})`}}></div> */}
+
+            <div className="logos">
+                {logos.map((logo,k) => 
+                    <img key={k} className="logo-img" alt="" src={getStorageUrl(logo.path)} />
+                )}
+            </div>
 
             <div className="ParticlejsContainer">
-                <Particles params={config.particlejs} />
+                <Particles params={config.fallbackParticlejs} />
             </div>
 
         </section>
@@ -113,10 +138,10 @@ const Welcome2 = withRouter(class Welcome extends React.Component {
 
                 <div className="welcome-explorer">
                     <ul>
-                        <li><Link to="">About</Link></li>
-                        <li><Link to="">Work</Link></li>
-                        <li><Link to="">Posts</Link></li>
-                        <li><Link to="">Message Me</Link></li>
+                        <li><Link to="/#about">About</Link></li>
+                        <li><Link to="/#work">Work</Link></li>
+                        <li><Link to="/#posts">Posts</Link></li>
+                        <li><Link to="/#contact">Message Me</Link></li>
                     </ul>
                 </div>
 

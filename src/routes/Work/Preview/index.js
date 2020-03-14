@@ -3,8 +3,6 @@ import { withRouter } from 'react-router-dom'
 import { getStorageUrl } from '../../../apis/cockpit'
 
 const WorkPreview = (props) => {
-    console.log('WorkPreview', {props})
-
     const {
         projectName,
         projectColor,
