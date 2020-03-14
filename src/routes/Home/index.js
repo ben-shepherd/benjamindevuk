@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux';
-import appActions from '../../_actions/app.action'
-import { singletons, collections } from '../../apis/cockpit';
 import Welcome from './welcome.section'
 import About from './about.section'
 import Portfolio from './portfolio.section'
@@ -9,31 +7,20 @@ import Contact from './contact.section'
 import '../../_scss/homepage.scss'
 import '../../_scss/devices.scss'
 import SiteWrapper from '../../components/SiteWrapper';
-import Loading from '../../components/Loading';
 
 const Home = (props) => {
+
+    const { cockpit } = props
+    const { loaded, welcome, portfolio } = cockpit
+
+    React.useEffect(() => {
+        console.log('Home change', {cockpit})
+    }, [cockpit])
     
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const cockpitData = {
-    //             welcome: await singletons.get('welcome'),
-    //             portfolio: await collections.posts('portfolio'),
-    //         }
-            
-    //         props.setCockpit(cockpitData);
-    //     }
+    if(!loaded) {
+        return null
+    }
 
-    //     fetchData();
-    // }, [])
-
-    // if(props.cockpit === null) {
-    //     return (
-    //         <Loading />
-    //     )
-    // }
-
-    const { welcome } = props.cockpit
-    
     return (
         <SiteWrapper content={(
             <React.Fragment>
@@ -46,7 +33,7 @@ const Home = (props) => {
                 <section className="AboutDivider"></section>
 
                 <a name="portfolio"></a>
-                <Portfolio />
+                <Portfolio portfolio={portfolio} />
 
                 <a name="contact"></a>
                 <Contact />
@@ -56,12 +43,10 @@ const Home = (props) => {
     )
 }
 
-const mapState = (state) => ({
-    cockpit: state.app.cockpit,
-})
-// const mapDispatch = (dispatch) => ({
-//     setCockpit: (payload) => dispatch(appActions.cockpit(payload)),
+// const mapState = (state) => ({
+//     cockpit: state.app.cockpit,
 // })
-const connected = connect(mapState, null)(Home);
+// const connected = connect(mapState, null)(Home);
 
-export default connected
+// export default connected
+export default Home;

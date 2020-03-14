@@ -1,21 +1,12 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import appActions from '../_actions/app.action'
+import cockpitAction from '../_actions/cockpit.action'
 import { collections, singletons } from '../apis/cockpit'
 import ModalDialog from '../components/Modal'
 
 import { Route, Switch } from 'react-router-dom'
 import Home from './Home'
 import Work from './Work'
-// import Puretrees from './Portfolio/puretrees'
-// import Hindhead from './Portfolio/hindhead'
-// import Gametimeblitz from './Portfolio/gametimeblitz'
-// import Habbocreate from './Portfolio/habbocreate'
-// import Kaitenbun from './Portfolio/kaitenbun'
-// import PortfolioPension from './Portfolio/thepensionadmin'
-// import Tipsntoes from './Portfolio/tipsntoes'
-
-// import ArticleOne from './Articles/One'
 
 const components = {
     Home,
@@ -25,16 +16,19 @@ const components = {
 const Routes = (props) => {
 
     const { cockpit } = props
+    const { routes } = cockpit
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                props.setCockpit({
+                const cockpitPayload = {
                     ...props.cockpit,
                     routes: await collections.posts('routes'),
                     welcome: await singletons.get('welcome'),
                     portfolio: await collections.posts('portfolio')
-                })
+                }
+
+                props.setCockpit(cockpitPayload)
             }   
             catch (err) {
                 console.error(err)
@@ -44,11 +38,8 @@ const Routes = (props) => {
         fetchData()
     }, [])  
 
-    useEffect(() => {
-        console.log('Routes - cockpit updated', )
-    }, [props.cockpit])
 
-    if(!cockpit || !cockpit.routes) {
+    if(!routes) {
         return null
     }
 
@@ -57,19 +48,26 @@ const Routes = (props) => {
             <ModalDialog />
 
             <Switch>
-                {cockpit.routes.entries.map((route) => 
-                    <Route exact path={route.path} component={components[route.component]} />
-                )}
+                {typeof routes.entries !== 'undefined' ? (
+                    routes.entries.map((route, i) => 
+                        <Route key={i} exact path={route.path} component={RouteComponent(route.component, cockpit)} />
+                    )
+                ) : null}
             </Switch>
         </React.Fragment>
     )
 }
 
+const RouteComponent = (component, cockpit) => (props) => {
+    const Component = components[component];
+    return <Component {...props} cockpit={cockpit} />       
+}
+
 const mapState = (state) => ({
-    cockpit: state.app.cockpit,
+    cockpit: state.cockpit,
 })
 const mapDispatch = (dispatch) => ({
-    setCockpit: (payload) => dispatch(appActions.cockpit(payload)),
+    setCockpit: (payload) => dispatch(cockpitAction.cockpit(payload)),
 })
 
 export default connect(mapState, mapDispatch)(Routes)

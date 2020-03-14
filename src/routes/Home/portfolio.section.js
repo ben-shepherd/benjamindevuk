@@ -2,21 +2,12 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { animateScroll as scroll } from 'react-scroll'
 
-// portfolio items
-//import Puretree from './portfolioItems/puretree'
-// import Hindhead from './portfolioItems/hindhead'
-// import Gtblitz from './portfolioItems/gtblitz'
-// import Hbc from './portfolioItems/hbc'
-// import Kaitenbun from './portfolioItems/kaitenbun'
-// import PensionAdmin from './portfolioItems/pensionadmin'
-// import Tipsntoes from './portfolioItems/tipsntoes'
-// import Workinprogress from './portfolioItems/workinprogress'
 import Work from '../Work'
 import WorkPreview from '../Work/Preview'
 
 const Portfolio = (props) => {
 
-    const { portfolio } = props.cockpit
+    const { portfolio } = props
 
     const onClick = (url) => {
         scroll.scrollToTop()

@@ -55,11 +55,6 @@ const hideModal = () => {
     store.dispatch({type: HIDE_MODAL})
 }
 
-const COCKPIT = 'COCKPIT'
-const cockpit = (payload) => {
-    return {type: COCKPIT, payload};
-}
-
 export default {
     ENV_DEVELOPMENT,
     ENV_PRODUCTION,
@@ -91,7 +86,4 @@ export default {
 
     HIDE_MODAL,
     hideModal,
-
-    COCKPIT,
-    cockpit,
 }

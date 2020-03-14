@@ -4,11 +4,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 
 import app from './_reducers/app.reducer'
 import auth from './_reducers/auth.reducer'
+import cockpit from './_reducers/cockpit.reducer'
 
 const store = createStore(
     combineReducers({
         app,
         auth,
+        cockpit,
     }),
     composeWithDevTools(applyMiddleware(thunk))
 )

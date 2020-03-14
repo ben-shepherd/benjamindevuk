@@ -13,9 +13,12 @@ export const list = async () => {
     }
 }
 
-export const posts = async (collectionName) => {
+export const posts = async (collectionName, filters = []) => {
     try {
-        const response = await axios.get(getUrl('collections/get/'+collectionName));
+        const formData = {
+            filters,
+        }
+        const response = await axios.get(getUrl('collections/get/'+collectionName, filters));
         
         return response.data
     }

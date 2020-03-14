@@ -1,11 +1,33 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 
 const Work = (props) => {
 
-    let { id } = useParams()
-    console.log('Work', {props}, {id})
+    const { cockpit } = props
+    const { portfolio } = cockpit
+    const [project, setProject] = useState(null)
 
+    
+    useEffect(() => {
+        const url = props.match.path
+        const projectData = portfolio.entries.find(entry => {
+            return entry.route.display === url
+        })
+
+        setProject(projectData)
+    }, [props.match.path])
+
+
+    useEffect(() => {
+        console.log('Work Project', {project})
+    }, [project])
+
+    useEffect(() => {
+        console.log('Work props', {props})
+    }, [props])
+
+    if(!project) {
+        return null
+    }
     
     return (
         <div className="WorkComponent">
