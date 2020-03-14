@@ -13,24 +13,24 @@ import Loading from '../../components/Loading';
 
 const Home = (props) => {
     
-    useEffect(() => {
-        const fetchData = async () => {
-            const cockpitData = {
-                welcome: await singletons.get('welcome'),
-                portfolio: await collections.posts('portfolio'),
-            }
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const cockpitData = {
+    //             welcome: await singletons.get('welcome'),
+    //             portfolio: await collections.posts('portfolio'),
+    //         }
             
-            props.setCockpit(cockpitData);
-        }
+    //         props.setCockpit(cockpitData);
+    //     }
 
-        fetchData();
-    }, [])
+    //     fetchData();
+    // }, [])
 
-    if(props.cockpit === null) {
-        return (
-            <Loading />
-        )
-    }
+    // if(props.cockpit === null) {
+    //     return (
+    //         <Loading />
+    //     )
+    // }
 
     const { welcome } = props.cockpit
     
@@ -59,32 +59,9 @@ const Home = (props) => {
 const mapState = (state) => ({
     cockpit: state.app.cockpit,
 })
-const mapDispatch = (dispatch) => ({
-    setCockpit: (payload) => dispatch(appActions.cockpit(payload)),
-})
-const connected = connect(mapState, mapDispatch)(Home);
+// const mapDispatch = (dispatch) => ({
+//     setCockpit: (payload) => dispatch(appActions.cockpit(payload)),
+// })
+const connected = connect(mapState, null)(Home);
 
 export default connected
-// export default class Home extends React.Component {
-
-//     render() {
-//         return (
-//             <SiteWrapper content={(
-//                 <React.Fragment>
-//                     <a name="home" />
-//                     <Welcome />
-
-//                     <a name="about"></a>
-//                     <About />
-//                     <section className="AboutDivider"></section>
-
-//                     <a name="portfolio"></a>
-//                     <Portfolio />
-
-//                     <a name="contact"></a>
-//                     <Contact />
-//                 </React.Fragment>
-//             )} />
-//         )
-//     }
-// }
