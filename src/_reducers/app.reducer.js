@@ -21,7 +21,8 @@ const initialState = {
         title: null,
         body: null,
         buttons: [DefaultButton()],
-    }
+    },
+    sidebarFull: false,
 }
 
 const app = (state = initialState, action) => {
@@ -83,6 +84,11 @@ const app = (state = initialState, action) => {
                 modal: {
                     ...initialState.modal,
                 }
+            }
+        case appAction.SIDEBAR_FULL:
+            return {
+                ...state,
+                sidebarFull: action.payload
             }
         default:
             return state

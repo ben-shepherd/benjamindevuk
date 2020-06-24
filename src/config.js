@@ -2,7 +2,7 @@ const config = {
 
     API_URL: 'http://benjamindev-api.local/',
 
-    particlejs: {
+    fallbackParticlejs: {
         "particles": {
           "number": {
             "value": 40,
@@ -12,7 +12,7 @@ const config = {
             }
           },
           "color": {
-            "value": "#595959"
+            "value": "#e6e6e6"
           },
           "shape": {
             "type": "circle",

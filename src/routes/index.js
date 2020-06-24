@@ -1,36 +1,75 @@
-import React from 'react'
-import { Route, Switch } from 'react-router-dom'
-
-import Home from './Home'
-import Puretrees from './Portfolio/puretrees'
-import Hindhead from './Portfolio/hindhead'
-import Gametimeblitz from './Portfolio/gametimeblitz'
-import Habbocreate from './Portfolio/habbocreate'
-import Kaitenbun from './Portfolio/kaitenbun'
-import ThePensionAdmin from './Portfolio/thepensionadmin'
-import Tipsntoes from './Portfolio/tipsntoes'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import cockpitAction from '../_actions/cockpit.action'
+import { collections, singletons } from '../apis/cockpit'
 import ModalDialog from '../components/Modal'
 
-export default class Routes extends React.Component {
+import { Route, Switch } from 'react-router-dom'
+import Home from './Home'
+import Work from './Work'
 
-    render() {
-        return (
-            <React.Fragment>
-                <ModalDialog />
-
-                <Switch>
-                    <Route exact path="/" component={Home} />
-
-                    {/* Portfolio */}
-                    <Route path="/portfolio/puretrees" component={Puretrees} />
-                    <Route path="/portfolio/hindheadproperty" component={Hindhead} />
-                    <Route path="/portfolio/gametimeblitz" component={Gametimeblitz} />
-                    <Route path="/portfolio/habbocreate" component={Habbocreate} />
-                    <Route path="/portfolio/kaitenbun" component={Kaitenbun} />
-                    <Route path="/portfolio/thepensionadministrator" component={ThePensionAdmin} />
-                    <Route path="/portfolio/tipsntoes" component={Tipsntoes} />
-                </Switch>
-            </React.Fragment>
-        )
-    }
+const components = {
+    Home,
+    Work
 }
+
+const Routes = (props) => {
+
+    const { cockpit } = props
+    const { routes } = cockpit
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const cockpitPayload = {
+                    ...props.cockpit,
+                    routes:         await collections.posts('routes'),
+                    welcome:        await singletons.get('welcome'),
+                    welcomeButtons: await collections.posts('welcomeButtons'),
+                    about:          await singletons.get('about'),
+                    portfolio:      await collections.posts('portfolio')
+                }
+
+                props.setCockpit(cockpitPayload)
+            }   
+            catch (err) {
+                console.error(err)
+            } 
+        }
+
+        fetchData()
+    }, [])  
+
+
+    if(!routes) {
+        return null
+    }
+
+    return (
+        <React.Fragment>
+            <ModalDialog />
+
+            <Switch>
+                {typeof routes.entries !== 'undefined' ? (
+                    routes.entries.map((route, i) => 
+                        <Route key={i} exact path={route.path} component={RouteComponent(route.component, cockpit)} />
+                    )
+                ) : null}
+            </Switch>
+        </React.Fragment>
+    )
+}
+
+const RouteComponent = (component, cockpit) => (props) => {
+    const Component = components[component];
+    return <Component {...props} cockpit={cockpit} />       
+}
+
+const mapState = (state) => ({
+    cockpit: state.cockpit,
+})
+const mapDispatch = (dispatch) => ({
+    setCockpit: (payload) => dispatch(cockpitAction.cockpit(payload)),
+})
+
+export default connect(mapState, mapDispatch)(Routes)

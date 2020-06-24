@@ -15,94 +15,17 @@ html, body, .App {
     height:100vh;
 }
 .section-dark {
-    background-color:#1778ba;
+    background-color:#0e0e0e;
 }
 .site-wrapper {
     display:flex;
     flex-direction:row;
-}
-.app-sidebar {
-    flex:0 0 350px;
-    position:sticky;
-    top:0;
-    background-color: #101010;
-    flex-grow:1;
-}
-.app-content  {
-    flex-direction:column;
-    flex:0 0 80%;
-}
-.sidebar {
-    flex:auto auto 350px;
-    position:sticky;
-    top:0;
-}
-.sidebar-mobile {
-    display:none;
-}
-.sidebar .basic {
-    flex-wrap:wrap;
-    color:#fff;
-    padding:10px;
-}
-.sidebar .basic .picture {
-    background-image: url('/img/profile_picture.jpg');
-    width:100px;
-    height:100px;
-    border-radius:50px;
-    background-position:center;
-    background-size:cover;
 
-    // box-shadow:1px 1px rgb(0, 0, 0, 0.8);
+    .app-content {
+        width:100%;
+    }
+}
 
-}
-.sidebar .basic .author {
-    position:relative;
-    top:12px;
-    left:25px;
-    display:block;
-}
-.sidebar .basic .author h1 {
-    margin:0;
-}
-.sidebar .basic .author h2 {
-    font-size:20px;
-    margin:0;
-}
-.sidebar .top .text {
-    margin-top:15px;
-    margin-left:15px;
-    text-align:center;
-    margin-bottom:10px;
-
-}
-.sidebar .top .text h2 {
-    font-size:20px;
-    color:#fff;
-}
-.sidebar .social {
-    color:#fff;
-    margin-top:5px;
-    margin-left:25px;
-    margin-bottom:15px;
-    display:flex;
-    flex-wrap:wrap;
-    flex-direction:column;
-}
-.sidebar .social .phone {
-    order:3;
-    margin-top:2px;
-}
-.sidebar .social .phone svg {
-    margin-right:5px;
-}
-.sidebar .social-icon {
-    height:30px;
-    width:30px;
-    background-size:contain;
-    background-position:center;
-    background-repeat:no-repeat;
-}
 .social-icon.facebook {
     height:20px;
     margin-top:5px;
@@ -111,39 +34,7 @@ html, body, .App {
 .social-icon.twitter {  
     background-image: url('/img/logos/twitter.png');
 }
-nav.sidebar-nav {
 
-}
-nav.sidebar-nav ul {
-    list-style-type:none;
-    margin:0;
-    padding:0;
-}
-nav.sidebar-nav li:first-child {
-    
-}
-nav.sidebar-nav li:last-child {
-    
-}
-nav.sidebar-nav li a {
-    display:block;
-    height:75px;
-    line-height:75px;
-    background-color:#161616;
-    padding-left:30px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight:300;
-}
-nav.sidebar-nav a:hover {
-    background-color:#2b2b2b;
-    text-decoration:none;
-}
-nav.sidebar-nav a {
-    color:#fff;
-    text-transform:uppercase;
-    font-weight:300;
-    font-size:1.2em;
-}
 .secondary-nav {
     margin-top:15px;
     padding-left:3  0px;
@@ -183,6 +74,8 @@ section.Welcome {
     padding-top:150px;
     width:100%;
     position:relative;
+    background-color: #1669e6;
+    color:#fff;
 }
 section.Welcome .catchy {
     text-align:center;
@@ -213,6 +106,46 @@ section.Welcome .welcome-contact .btn:hover {
     transform:scale(1.1);
     transition:transform 0.2s ease-in;
 }
+
+/* Welcome explorer */
+section.Welcome .welcome-explorer {
+    text-align:center;
+    margin-top:60px;
+
+    ul {
+        list-style-type:none;
+        display:inline-block;
+        margin:0 auto;
+        padding:0;
+    }
+    li {
+        background:#000000a8;
+        display:inline-block;
+        height:55px; 
+        line-height:55px;
+        text-align:center;
+        border:1px solid rgba(0,0,0,0.1);
+        border-top:0;
+        border-bottom:0;
+
+        &:first-child {
+            border-top-left-radius:28px;
+            border-bottom-left-radius:28px;
+            padding-left:35px;
+        }
+        &:last-child {
+            border-top-right-radius:28px;
+            border-bottom-right-radius:28px;
+            padding-right:35px;
+        }
+    }
+    a {
+        padding:0 25px;
+        color:#fff;
+        font-family: 'Nunito', sans-serif;
+    }
+}
+
 section.Welcome .logos {
     display:flex;
     align-items:center;
@@ -221,33 +154,15 @@ section.Welcome .logos {
     margin-top:10%;
     margin-bottom:50px;
 }
-section.Welcome .logos .logo {
-    width:100px;
-    height:120px;
-    background-position:center;
-    background-size:contain;
-    background-repeat:no-repeat;
-    margin:0 35px;
-    transition:transform 0.2s ease-in;
+section.Welcome .logo-img {
+    max-height:100px;
+    margin:0 15px;
 }
-section.Welcome .logos .logo:hover {
-    transition:transform 0.2s ease-in;
-    transform:scale(1.2);
-}
-section.Welcome .logos .logo.laravel {
-    background-image: url('/img/logos/laravel.png');
-}
-section.Welcome .logos .logo.nodejs {
-    background-image: url('/img/logos/nodejs.png');
-    width:170px;
-}
-section.Welcome .logos .logo.reactjs {
-    background-image: url('/img/logos/reactjs.png');
-}
+
 
 /* About section */
 section.About {
-    border:4px solid #2e73a1;
+    border:4px solid #282829;
     border-left:0;
     border-right:0;
     box-shadow:10px -30px  55px rgba(52, 58, 64, 0.3);
@@ -260,11 +175,8 @@ section.About .AboutMe a {
    color:#adccea;
 }
 
-section.About .Interests .interest-parent.frontend {
-    margin-bottom:5px;
-}
 section.About .Interests .interest-parent {
-    background-color:#134a70;
+    background-color:#2b343a;
     margin-bottom:10px;
     border-radius:3px;
     padding:0 15px;
@@ -294,71 +206,57 @@ div.About-flex .developer-summary {
 section.Portfolio {
     padding:50px 0;
 }
-section.Portfolio .section-title {
-
-}
-section.Portfolio .portfolio-items {
-    flex-direction:row;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:center;
-}
-section.Portfolio .portfolio-item {
-    height:200px;
-    flex:0 0 25%;
-    margin:10px;
-    border-radius:3px;
-    overflow:hidden;
-    position:relative;
-    transition:all 0.2s ease-in;
-}
-section.Portfolio .portfolio-item.workinprogress {
-    height:375px;
-    flex:0 0 35%;
-}
-section.Portfolio .portfolio-item:hover {
-    transform:scale(1.2);
-    transition:all 0.2s ease-in;
-    z-index:1000;
-}
-section.Portfolio .portfolio-item:not(.workinprogress):hover {
-    cursor:pointer;
-}
-section.Portfolio .portfolio-item .background {
-    width:100%;
-    height:100%;
-    background-size:cover;
-    filter: grayscale(100%);
-    transform:all 0.5s ease-in;
-}
-section.Portfolio .portfolio-item .portfolio-title {
-    font-size:30px;
-    padding:5px 15px;
-    background-color:rgba(0,0,0,0.5);;
-    line-height:200px;
-    text-align:center;
-    
+section.Portfolio .preview-container {
+    display:flex;
+    max-width:80%;
     margin:auto;
-    color:#fff;
-    opacity:0;
-    transform:all 0.5s ease-in;
+
+    .WorkPreviewComponent {
+        height:300px;
+        flex-grow:1;
+        position: relative;
+        overflow:hidden;
+
+        &:first-child {
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        &:last-child {
+            border-top-right-radius:30px;
+            border-bottom-right-radius:30px;
+        }
+
+    }
+    .WorkPreviewComponent .brandColor,
+    .WorkPreviewComponent .image {
+        width:100%;
+        height:100%;
+    }
+    .WorkPreviewComponent .image {
+        background-position: center;
+        background-size:contain;
+        background-repeat:no-repeat;
+        transition:all 0.4s ease;
+
+        &:hover {
+            opacity:0.8;
+            transition:all 0.4s ease;
+            cursor:pointer;
+        }
+    }
+    .WorkPreviewComponent .name {
+        width:100%;
+        text-align:center;
+        margin:auto;
+        color:#fff;
+        font-family: 'Nunito', sans-serif;
+        position: absolute;
+        top:10px;
+        z-index:2;
+    }
 }
-section.Portfolio .portfolio-item:hover .portfolio-title {
-    opacity:1;
-    transform:all 0.5s ease-in;
-}
-section.Portfolio .portfolio-item:hover .background {
-    filter: none;
-    transform:all 0.5s ease-in;
-}
-section.Portfolio .portfolio-item.gtblitz .background {
-    background-size:600px;
-    background-position:0px;
-}
-section.Portfolio .portfolio-item.kaitenbun .background {
-    background-size:contain;
-    background-position:center;
-}
+
+/* Portfolio github */
 section.Portfolio .github-repo {
     text-align:center;
     line-height:0;

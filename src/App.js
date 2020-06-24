@@ -12,24 +12,13 @@ import store from './store'
 // Routes
 import Routes from './routes'
 
-// Sections
-import Sidebar from './components/sidebar'
-
-
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
         <BrowserRouter>
           <div className="App">
-            <div className="site-wrapper">
-              <div className="app-sidebar">
-                <Sidebar />
-              </div>
-              <div className="app-content d-flex">
-                <Routes />
-              </div>
-            </div>
+            <Routes />
           </div>
         </BrowserRouter>
       </Provider>

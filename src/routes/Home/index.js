@@ -1,29 +1,52 @@
 import React from 'react'
+import { connect } from 'react-redux';
 import Welcome from './welcome.section'
 import About from './about.section'
 import Portfolio from './portfolio.section'
 import Contact from './contact.section'
 import '../../_scss/homepage.scss'
 import '../../_scss/devices.scss'
+import SiteWrapper from '../../components/SiteWrapper';
 
-export default class Home extends React.Component {
+const Home = (props) => {
 
-    render() {
-        return (
-            <div>
+    const { cockpit } = props
+    const { loaded, welcome, welcomeButtons, about, portfolio } = cockpit
+
+    React.useEffect(() => {
+        console.log('Home change', {cockpit})
+    }, [cockpit])
+    
+    if(!loaded) {
+        return null
+    }
+
+    return (
+        <SiteWrapper content={(
+            <React.Fragment>
+
                 <a name="home" />
-                <Welcome />
+                <Welcome singleton={welcome} welcomeButtons={welcomeButtons} />
 
                 <a name="about"></a>
-                <About />
+                <About singleton={about} />
                 <section className="AboutDivider"></section>
 
                 <a name="portfolio"></a>
-                <Portfolio />
+                <Portfolio portfolio={portfolio} />
 
                 <a name="contact"></a>
                 <Contact />
-            </div>
-        )
-    }
+
+            </React.Fragment>
+        )} />
+    )
 }
+
+// const mapState = (state) => ({
+//     cockpit: state.app.cockpit,
+// })
+// const connected = connect(mapState, null)(Home);
+
+// export default connected
+export default Home;

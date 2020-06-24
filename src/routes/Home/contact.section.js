@@ -24,8 +24,7 @@ export default class Contact extends React.Component {
     }
 
     submitMessage = async (formData) => {
-        console.log({formData})
-        if(formData.body.length < 50) {
+        if(formData.body.length < 25) {
             appAction.createModal('Message is too short')
             return
         }

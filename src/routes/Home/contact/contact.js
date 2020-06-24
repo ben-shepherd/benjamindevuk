@@ -38,8 +38,8 @@ class Form extends React.Component {
             this.setState({submitting: false})
         }
 
-        var bodyCountClassName = body.length || body.length < 50 ? 'too-short' : ''
-        bodyCountClassName = body.length > 50 ? 'good' : bodyCountClassName
+        var bodyCountClassName = body.length || body.length < 25 ? 'too-short' : ''
+        bodyCountClassName = body.length > 25 ? 'good' : bodyCountClassName
 
         return (
             <div className="container">

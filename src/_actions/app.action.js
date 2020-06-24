@@ -55,6 +55,11 @@ const hideModal = () => {
     store.dispatch({type: HIDE_MODAL})
 }
 
+const SIDEBAR_FULL = 'SIDEBAR_FULL'
+const sidebarFull = (payload) => {
+    return {type: SIDEBAR_FULL, payload}
+
+}
 export default {
     ENV_DEVELOPMENT,
     ENV_PRODUCTION,
@@ -86,4 +91,7 @@ export default {
 
     HIDE_MODAL,
     hideModal,
+
+    SIDEBAR_FULL,
+    sidebarFull,
 }
