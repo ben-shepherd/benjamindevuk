@@ -127,6 +127,7 @@ section.Welcome .welcome-explorer {
         border:1px solid rgba(0,0,0,0.1);
         border-top:0;
         border-bottom:0;
+        transition:all 0.5s ease;
 
         &:first-child {
             border-top-left-radius:28px;
@@ -138,11 +139,21 @@ section.Welcome .welcome-explorer {
             border-bottom-right-radius:28px;
             padding-right:35px;
         }
+
+        &:hover {
+            cursor:pointer;
+            transition:all 0.5s ease;
+            background:#09316d;
+        }
     }
     a {
         padding:0 25px;
         color:#fff;
         font-family: 'Nunito', sans-serif;
+
+        &:hover {
+            text-decoration:none;
+        }
     }
 }
 

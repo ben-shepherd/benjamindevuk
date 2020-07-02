@@ -7,10 +7,14 @@ import ModalDialog from '../components/Modal'
 import { Route, Switch } from 'react-router-dom'
 import Home from './Home'
 import Work from './Work'
+import Posts from './Posts';
+import PostPage from './Posts/components/PostPage';
 
 const components = {
     Home,
-    Work
+    Work,
+    Posts,
+    PostPage,
 }
 
 const Routes = (props) => {
@@ -24,10 +28,6 @@ const Routes = (props) => {
                 const cockpitPayload = {
                     ...props.cockpit,
                     routes:         await collections.posts('routes'),
-                    welcome:        await singletons.get('welcome'),
-                    welcomeButtons: await collections.posts('welcomeButtons'),
-                    about:          await singletons.get('about'),
-                    portfolio:      await collections.posts('portfolio')
                 }
 
                 props.setCockpit(cockpitPayload)

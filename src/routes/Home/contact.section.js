@@ -29,7 +29,7 @@ export default class Contact extends React.Component {
             return
         }
 
-        fetch('contact/message', formData).then(response => {
+        fetch('mail', formData).then(response => {
             if(response.status) {
                 appAction.createModalTitle(
                     'Successfully sent',

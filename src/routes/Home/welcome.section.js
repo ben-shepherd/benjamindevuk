@@ -9,6 +9,8 @@ import urlService from '../../_services/url.service';
 import { animateScroll as scroll } from 'react-scroll'
 
 const introTexts = [
+    "Authentication",
+    "Booking Software",
     "Image Galleries",
     "Single Paged Websites",
     "User Profiles",
@@ -20,10 +22,22 @@ const introTexts = [
     "Data Reporting & Analytics",
     "Website Hosting",
     "Business Software",
-    "Geographical Queries",
+    "Geographical Datanase Queries",
     "Automated Scripts",
     "Socially Interactive Features",
-    "Third Party e.g. Facebook, Instagram"
+    "Third Party e.g. Facebook, Instagram",
+    "Web Crawlers",
+    "SEO Optimization",
+    "Automation",
+    "React.js Projects",
+    "Geographicial Based Software",
+    "Customisable User Profiles",
+    "Language Translation",
+    "Database Optimization",
+    "Vehicle Routing",
+    "Geographical Vehicle Routing",
+    "Financial Reporting",
+    "Cart Checkouts"
 ];
 
 const fallbackButtons = () => (

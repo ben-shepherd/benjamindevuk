@@ -2,17 +2,11 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { animateScroll as scroll } from 'react-scroll'
 
-import Work from '../Work'
 import WorkPreview from '../Work/Preview'
 
 const Portfolio = (props) => {
 
     const { portfolio } = props
-
-    const onClick = (url) => {
-        scroll.scrollToTop()
-        props.history.push(url)
-    }
 
     return (
         <section className="Portfolio">

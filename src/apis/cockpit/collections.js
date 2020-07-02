@@ -13,14 +13,26 @@ export const list = async () => {
     }
 }
 
-export const posts = async (collectionName, filters = []) => {
+export const get = async (collectionName, options) => await posts(collectionName, options)
+
+export const posts = async (collectionName, options = []) => {
     try {
-        const formData = {
-            filters,
-        }
-        const response = await axios.get(getUrl('collections/get/'+collectionName, filters));
+        // const response = await axios({
+        //     method: 'post',
+        //     url: getUrl('collections/get/'+collectionName, options),
+        //     data: options,
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
+        // })
+        const res = await fetch(getUrl('collections/get/'+collectionName, options), {
+            method: 'post',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(options)
+        })
+        const json = await res.json()
         
-        return response.data
+        return json
     }
     catch (err) {
         console.error(err);
@@ -30,5 +42,6 @@ export const posts = async (collectionName, filters = []) => {
 
 export default {
     list,
+    get,
     posts
 };
