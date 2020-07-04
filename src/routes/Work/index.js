@@ -2,24 +2,34 @@ import React, { useState, useEffect, Fragment } from 'react'
 import { connect } from 'react-redux'
 import cockpitActions from '../../_actions/cockpit.action'
 import SiteWrapperSidebar from '../../components/SiteWrapperSidebar'
-import { getStorageUrl, hasValue } from '../../apis/cockpit'
+import { collections, getStorageUrl, hasValue } from '../../apis/cockpit'
 import '../../_scss/work.scss';
 import PageCurved from '../../components/PageCurved'
 
 const WorkContainer = (props) => {
 
     const { cockpit } = props
-    const { portfolio } = cockpit
+    let { portfolio } = cockpit
     const [project, setProject] = useState(null)
 
-    
     useEffect(() => {
-        const url = props.match.path
-        const projectData = portfolio.entries.find(entry => {
-            return entry.route.display === url
-        })
 
-        setProject(projectData)
+        const loadPortfolio = async () => {
+
+            if(portfolio === null) {
+                portfolio = await collections.posts('portfolio')
+            }
+
+            const url = props.match.path
+            const projectData = portfolio.entries.find(entry => {
+                return entry.route.path === url
+            })
+    
+            setProject(projectData)
+        }
+
+        loadPortfolio();
+        
     }, [props.match.path])
 
     if(!project) {

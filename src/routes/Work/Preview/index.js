@@ -17,7 +17,7 @@ const WorkPreview = (props) => {
     }
 
     const handleClick = () => {
-        props.history.push(route.display)
+        props.history.push(route.display || route.path)
     }
 
     return (
