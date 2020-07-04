@@ -1,5 +1,4 @@
 import { getAuthHeader, getCsrfToken } from "./auth.service";
-import config from '../config'
 import axios from 'axios'
 
 const initialHeader   = {

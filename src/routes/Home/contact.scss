@@ -1,0 +1,33 @@
+.formButtons {
+    overflow:auto;
+}
+
+.enquiry-loading,
+.enquiry-completed {
+    opacity:0;
+    transform:opacity 0.4s ease;
+}
+.enquiry-loading.active,
+.enquiry-completed.active {
+    opacity:1;
+    transform:opacity 0.4s ease;
+}
+.enquiry-loading [class^=MuiCircularProgress] {
+   margin:0 auto;
+   display:inline;
+   height:50px;
+   width:100%;
+   margin-top:25px;
+}
+.enquiry-completed svg {
+    font-size:55px;
+    color:#34dc70;
+    margin-bottom:10px;
+}
+
+.enquiry-loading,
+.enquiry-completed {
+    font-family: 'Ubuntu', sans-serif;
+    font-size:1.2em;
+    font-weight:300;
+}

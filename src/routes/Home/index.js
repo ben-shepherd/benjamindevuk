@@ -48,17 +48,17 @@ const Home = (props) => {
         <SiteWrapper content={(
             <React.Fragment>
 
-                <a name="home" />
+                <a name="home" href="#home"> </a>
                 <Welcome singleton={welcome} welcomeButtons={welcomeButtons} />
 
-                <a name="about"></a>
+                <a name="about" href="#about"> </a>
                 <About singleton={about} />
                 <section className="AboutDivider"></section>
 
-                <a name="portfolio"></a>
+                <a name="portfolio" href="#portfolio"> </a>
                 <Portfolio portfolio={portfolio} />
 
-                <a name="contact"></a>
+                <a name="contact" href="#contact"> </a>
                 <Contact />
 
             </React.Fragment>

@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import cockpitActions from '../../_actions/cockpit.action'
 import SiteWrapperSidebar from '../../components/SiteWrapperSidebar'
 import { getStorageUrl, hasValue } from '../../apis/cockpit'
-import { Tooltip, IconButton } from '@material-ui/core'
-import VisitIcon from '@material-ui/icons/CallMissedOutgoing';
 import '../../_scss/work.scss';
 import PageCurved from '../../components/PageCurved'
 

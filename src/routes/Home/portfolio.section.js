@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { animateScroll as scroll } from 'react-scroll'
 
 import WorkPreview from '../Work/Preview'
 

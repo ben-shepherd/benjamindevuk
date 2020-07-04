@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import cockpitAction from '../_actions/cockpit.action'
-import { collections, singletons } from '../apis/cockpit'
+import { collections } from '../apis/cockpit'
 import ModalDialog from '../components/Modal'
 
 import { Route, Switch } from 'react-router-dom'

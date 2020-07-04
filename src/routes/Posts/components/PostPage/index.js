@@ -1,12 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import SiteWrapperSidebar from '../../../../components/SiteWrapperSidebar'
 import { collections } from '../../../../apis/cockpit'
 
 const PostPageContainer = (props) => {
 
-    console.log('PostPage props', {props})
-    const [post, setPost] = useState(null)
-    
     const fetchData = async () => {
         try {
             const post = await collections.get('posts', {
