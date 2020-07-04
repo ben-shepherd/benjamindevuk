@@ -1,5 +1,4 @@
 import { getAuthHeader, getCsrfToken } from "./auth.service";
-import config from '../config'
 import axios from 'axios'
 
 const initialHeader   = {
@@ -29,11 +28,10 @@ export const fetch = async(url, body, headers = initialHeader) => {
                 headers,
                 method: 'post',
             }
-            const postUrl = `${config.API_URL}${url}`
+            const postUrl = `${process.env.REACT_APP_API_URL}${url}`
 
-            console.log('Axios', {postUrl, options})
             axios.post(postUrl, body, options).then(response => {
-                console.log('Axios response', response)
+
                 if(response.data.status && response.data.status === 1) {
                     resolve(handleResponse(response))
                 }

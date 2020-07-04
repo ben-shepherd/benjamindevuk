@@ -21,7 +21,7 @@
     }
 }
 
-.WorkComponent .top {
+.PageCurvedContainer .top {
     position: absolute;;
     top:0;
     z-index:0;
@@ -60,32 +60,19 @@
     }
 }
 
-.PageCurved  {
-    .projectList {
-        .title {
-            font-size:24px;
-            text-align:center;
-        }
-        ul,ol {
-            list-style-type:none;
-            display:flex;
-            flex-direction: column;
-            padding:0;
-        }
-        li {
-            flex-grow:1;
-            text-align: center;
-            padding:5px 0;
-            font-size:16px;
-            line-height:20px;
-        }
-    }
-}
+.PageCurvedContainer .PageContent {
+    position: absolute;
+    width:100%;
+    margin-top:300px;
+    color: #000;
+    font-family: 'Nunito', sans-serif;
 
-/* Project - Shift.online */
-.PageCurved.shift {
-    .PageCurvedLogo {
-        max-height:120px;
-        font-size:110px;
+    .PageBody {
+        font-weight:300;
+        font-size:22px;
+        line-height:40px;
+        p {
+            padding:10px 0;
+        }
     }
 }

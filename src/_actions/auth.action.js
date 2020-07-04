@@ -1,6 +1,5 @@
 import { LogoutService, setAuthUser, setAuthToken } from '../_services/auth.service'
 import firebase from 'firebase'
-import apiService from '../_services/api.service';
 
 
 const CREDENTIAL = 'CREDENTIAL'
