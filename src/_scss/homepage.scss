@@ -488,3 +488,11 @@ section.portfolio-page .screenshots-container .screenshot:hover {
 section.portfolio-page .screenshot.bg-left {
     background-position:left;
 }
+
+
+input.form-control, textarea.form-control {
+    border:1px solid #7a8aa2;
+    font-family:'Ubuntu', sans-serif;
+    font-size:14px;
+    height: calc(1.5em + .75rem + 10px);
+}

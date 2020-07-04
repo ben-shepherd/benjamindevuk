@@ -4,6 +4,7 @@ import Particles from 'react-particles-js'
 import config from '../../config';
 import AutoType from '../../components/AutoType'
 import { Link } from 'react-router-dom'
+import { animateScroll } from 'react-scroll'
 
 const introTexts = {items: [
     "Authentication",
@@ -49,23 +50,21 @@ const fallbackButtons = () => (
 const Welcome = (props) => {
 
     const { welcomeButtons } = props
-
     const { singleton } = props
     const { title, subTitle, logos } = singleton    
 
-    React.useEffect(() => {
-        console.log('Welcome buttons changed', {welcomeButtons})
-    }, [welcomeButtons])
+    const handleCustomRoute = (e, path) => {
+        e.preventDefault()
+        try {
+            const offsetTop = document.getElementById(path.replace('#','')).offsetTop
+            animateScroll.scrollTo(offsetTop)   
+        }
+        catch (err) {
+            console.warn(err)
+        }
+    }
 
-    React.useEffect(() => {
-        console.log('Welcome singleton changed', {singleton})
-    }, [welcomeButtons])
-
-    React.useEffect(() => {
-        console.log('Welcome logos', {logos})
-    }, [logos])
-
-    console.log('Welcome logos', {logos})
+    const activeWelcomeButtons = welcomeButtons.entries.filter((wb) => wb.active)
 
     return (
         <section className="Welcome full-height d-relative">
@@ -88,14 +87,13 @@ const Welcome = (props) => {
                     fallbackButtons()
                 ) : (
                     <ul>
-                        {welcomeButtons.entries.map((btn,i) => 
+                        {activeWelcomeButtons.map((btn,i) => 
                             <li>
-                                <a href={btn.customRoute} target="_blank" rel="noopener noreferrer">{btn.text}</a>
-                                {/* {(typeof btn.route !== 'object' && btn.route) && btn.customRoute.length ? (
-                                    <a href={btn.customRoute} target="_blank" rel="noopener noreferrer">{btn.text}</a>
+                                {btn.customRoute.length ? (
+                                    <a className="customRoute" href={btn.customRoute} target="_blank" rel="noopener noreferrer" onClick={(e) => handleCustomRoute(e, btn.customRoute)}>{btn.text}</a>
                                 ) : (
-                                    <a href={btn.route.path} target="_blank" rel="noopener noreferrer">{btn.text}</a>
-                                )} */}
+                                    <a className="externalRoute" href={btn.route.display} target="_blank" rel="noopener noreferrer">{btn.text}</a>
+                                )}
                             </li>
                         )}
                     </ul>

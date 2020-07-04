@@ -23,7 +23,7 @@ const Home = (props) => {
                     ...props.cockpit,
                     loadedHome:     true,
                     welcome:        await singletons.get('welcome'),
-                    welcomeButtons: await collections.posts('welcomeButtons'),
+                    welcomeButtons: await collections.posts('welcomeButtons', {active: true}),
                     about:          await singletons.get('about'),
                     portfolio:      await collections.posts('portfolio')
                 }
@@ -51,14 +51,14 @@ const Home = (props) => {
                 <a name="home" href="#home"> </a>
                 <Welcome singleton={welcome} welcomeButtons={welcomeButtons} />
 
-                <a name="about" href="#about"> </a>
+                <a name="about" id="about" href="#about"> </a>
                 <About singleton={about} />
                 <section className="AboutDivider"></section>
 
-                <a name="portfolio" href="#portfolio"> </a>
+                <a name="portfolio" id="portfolio" href="#portfolio"> </a>
                 <Portfolio portfolio={portfolio} />
 
-                <a name="contact" href="#contact"> </a>
+                <a name="contact" id="contact" href="#contact"> </a>
                 <Contact />
 
             </React.Fragment>

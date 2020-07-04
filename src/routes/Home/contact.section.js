@@ -1,19 +1,8 @@
 import React from 'react'
-import fetch from '../../_services/api.service'
 import FormContact from './contact/contact'
 import FormQuote from './contact/quote'
-import appAction from '../../_actions/app.action'
 import Button from '@material-ui/core/Button'
 import './contact.scss';
-
-const NetworkError = () => (
-    <React.Fragment>
-        <div>
-            <p>There was a problem connecting, if this problem persists please contact us manually.</p>
-            <a href="mailto:hi@benjamindev.uk">hi@benjamindev.uk</a>
-        </div>
-    </React.Fragment>
-)
 
 export default class Contact extends React.Component {
     state = {
